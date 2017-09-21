@@ -1,0 +1,925 @@
+#ui-datepicker-div {
+    font-family: sans-serif;
+    z-index: 9999 !important
+}
+
+.ui-widget {
+    font-size: 14px !important
+}
+
+.resources-content {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.6
+}
+
+.wego-searchbox {
+    text-align: left;
+    max-width: 1200px;
+    min-width: 300px
+}
+
+.wego-searchbox * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.wego-searchbox ul,
+.wego-searchbox li,
+.wego-searchbox h3,
+.wego-searchbox h4 {
+    list-style: none;
+    color: #666666
+}
+
+.wego-searchbox li {
+    display: list-item;
+    text-align: -webkit-match-parent
+}
+
+.wego-searchbox div,
+.wego-searchbox span,
+.wego-searchbox h1,
+.wego-searchbox h2,
+.wego-searchbox h3,
+.wego-searchbox h4,
+.wego-searchbox h5,
+.wego-searchbox h6,
+.wego-searchbox p,
+.wego-searchbox pre,
+.wego-searchbox a,
+.wego-searchbox abbr,
+.wego-searchbox acronym,
+.wego-searchbox address,
+.wego-searchbox big,
+.wego-searchbox code,
+.wego-searchbox del,
+.wego-searchbox dfn,
+.wego-searchbox em,
+.wego-searchbox img,
+.wego-searchbox ins,
+.wego-searchbox kbd,
+.wego-searchbox q,
+.wego-searchbox s,
+.wego-searchbox samp,
+.wego-searchbox small,
+.wego-searchbox strike,
+.wego-searchbox strong,
+.wego-searchbox sub,
+.wego-searchbox sup,
+.wego-searchbox tt,
+.wego-searchbox var,
+.wego-searchbox b,
+.wego-searchbox u,
+.wego-searchbox i,
+.wego-searchbox center,
+.wego-searchbox dl,
+.wego-searchbox dt,
+.wego-searchbox dd,
+.wego-searchbox ol,
+.wego-searchbox ul,
+.wego-searchbox li,
+.wego-searchbox fieldset,
+.wego-searchbox form,
+.wego-searchbox label,
+.wego-searchbox legend,
+.wego-searchbox table,
+.wego-searchbox caption,
+.wego-searchbox tbody,
+.wego-searchbox tfoot,
+.wego-searchbox thead,
+.wego-searchbox tr,
+.wego-searchbox th,
+.wego-searchbox td,
+.wego-searchbox article,
+.wego-searchbox aside,
+.wego-searchbox canvas,
+.wego-searchbox details,
+.wego-searchbox embed,
+.wego-searchbox figure,
+.wego-searchbox figcaption,
+.wego-searchbox footer,
+.wego-searchbox header,
+.wego-searchbox hgroup,
+.wego-searchbox menu,
+.wego-searchbox nav,
+.wego-searchbox output,
+.wego-searchbox ruby,
+.wego-searchbox section,
+.wego-searchbox summary,
+.wego-searchbox time,
+.wego-searchbox mark,
+.wego-searchbox audio,
+.wego-searchbox video {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    -moz-font-feature-settings: inherit;
+    -moz-font-language-override: inherit
+}
+
+.wego-searchbox div {
+    display: block
+}
+
+.wego-searchbox section {
+    clear: both;
+    line-height: 2em;
+    padding-left: 55px;
+    padding-right: 55px
+}
+
+.wego-searchbox input[type="checkbox"] {
+    display: none
+}
+
+.wego-searchbox ul li {
+    padding: 0px;
+    border: none;
+    margin: none
+}
+
+.wego-searchbox input[type="checkbox"]+label span {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-top: -3px;
+    margin-right: 4px;
+    margin-bottom: 0;
+    margin-left: 0;
+    vertical-align: middle;
+    background: url(http://www.wan.travel/assets/wan/searchbox/tick.png) -25px top no-repeat;
+    cursor: pointer
+}
+
+.wego-searchbox input[type="checkbox"]:checked+label span {
+    background: url(http://www.wan.travel/assets/wan/searchbox/tick.png) left top no-repeat
+}
+
+.wego-searchbox label {
+    line-height: 3em
+}
+
+.wego-searchbox .wego-text {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px
+}
+
+.wego-searchbox #wego-flights-searchform .wego-searchbox__adult-icon:after {
+    top: 8px
+}
+
+.wego-searchbox #wego-flights-searchform .wego-searchbox__adult-icon:before {
+    content: ''
+}
+
+.wego-searchbox #wego-flights-searchform .wego-searchbox__child-icon:after {
+    top: 0px
+}
+
+.wego-searchbox #wego-hotels-searchform .wego-searchbox__guest-icon:before {
+    margin-top: -12px
+}
+
+.wego-searchbox #wego-hotels-searchform .wego-searchbox__room-icon {
+    height: 30px
+}
+
+.wego-searchbox #wego-hotels-searchform .wego-searchbox__room-icon:before {
+    margin-top: 2px
+}
+
+.wego-searchbox .wg-single li.wego-selected .wego-searchbox__flights-icon {
+    width: 100%
+}
+
+.wego-searchbox .wg-single li.wego-selected .wego-searchbox__hotels-icon {
+    width: 100%
+}
+
+.wego-searchbox #wego-flights-searchform input[type="checkbox"],
+.wego-searchbox #wego-hotels-searchform input[type="checkbox"] {
+    display: inline-block;
+    margin: 4px
+}
+
+.wego-searchbox .wego-text {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px
+}
+
+.wego-searchbox .ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se {
+    display: none !important
+}
+
+.wego-searchbox li.wego-selected h2 {
+    border-bottom: 0px !important
+}
+
+.wego-searchbox .tab-content {
+    overflow: visible;
+    margin-top: 0px;
+    border: 1px solid #d6d6d6;
+    background: #ffffff
+}
+
+.wego-searchbox span.wg-select-moz {
+    background: url("http://www.wan.travel/assets/wan/searchbox/arrow-down.png") no-repeat scroll right 7px top 10px/18px 18px #fff;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    color: #666666;
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+    width: 50px
+}
+
+.wego-searchbox .wego-searchbox__nav {
+    *zoom: 1;
+    height: 39px
+}
+
+.wego-searchbox .wego-searchbox__nav:before,
+.wego-searchbox .wego-searchbox__nav:after {
+    content: " ";
+    display: table
+}
+
+.wego-searchbox .wego-searchbox__nav:after {
+    clear: both
+}
+
+@media only screen and (min-width: 760px) {
+    .wego-searchbox .wego-searchbox__nav {
+        max-width: 350px
+    }
+}
+
+.wego-searchbox .wego-searchbox__nav li h2 {
+    background: #ffffff;
+    border-bottom: 1px solid #d6d6d6;
+    border-left: 1px solid #d6d6d6;
+    border-radius: 0px;
+    border-right: 1px solid #d6d6d6;
+    border-top: 1px solid #d6d6d6;
+    clear: none;
+    color: #666666;
+    display: block;
+    float: left;
+    font-size: 12px;
+    height: 40px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 0;
+    padding-bottom: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 50%
+}
+
+.wego-searchbox .wego-searchbox__nav li h2:before {
+    content: '';
+    padding-top: 3px;
+    padding-right: 30px;
+    padding-left: 0;
+    padding-bottom: 0
+}
+
+.wego-searchbox .wego-searchbox__icon {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    /*width: 30%;*/
+
+}
+
+.wego-searchbox .wg-ico-green .wego-searchbox__flights-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/green-icon.png") no-repeat 0px 0px
+}
+
+.wego-searchbox .wg-ico-green .wego-searchbox__hotels-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/green-icon.png") no-repeat 0px -23px
+}
+
+.wego-searchbox .wg-ico-green .wego-searchbox__adult-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/green-icon.png) no-repeat 1px -48px
+}
+
+.wego-searchbox .wg-ico-green .wego-searchbox__child-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/green-icon.png) no-repeat 1px -86px
+}
+
+.wego-searchbox .wg-ico-green .wego-searchbox__guest-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/green-icon.png) no-repeat 2px -43px
+}
+
+.wego-searchbox .wg-ico-green .wego-searchbox__room-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/green-icon.png) no-repeat 0px -114px
+}
+
+.wego-searchbox .wg-ico-blue .wego-searchbox__flights-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/blue-icon.png") no-repeat
+}
+
+.wego-searchbox .wg-ico-blue .wego-searchbox__hotels-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/blue-icon.png") no-repeat 0px -23px
+}
+
+.wego-searchbox .wg-ico-blue h3.quote-text {
+    color: #2e70de
+}
+
+.wego-searchbox .wg-ico-blue .wego-searchbox__adult-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/blue-icon.png) no-repeat -1px -47px
+}
+
+.wego-searchbox .wg-ico-blue .wego-searchbox__child-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/blue-icon.png) no-repeat 0px -86px
+}
+
+.wego-searchbox .wg-ico-blue .wego-searchbox__guest-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/blue-icon.png) no-repeat 2px -43px
+}
+
+.wego-searchbox .wg-ico-blue .wego-searchbox__room-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/blue-icon.png) no-repeat 0px -114px
+}
+
+.wego-searchbox .wg-ico-red .wego-searchbox__flights-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/red-icon.png") no-repeat
+}
+
+.wego-searchbox .wg-ico-red .wego-searchbox__hotels-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/red-icon.png") no-repeat 0px -23px
+}
+
+.wego-searchbox .wg-ico-red h3.quote-text {
+    color: #cc3333
+}
+
+.wego-searchbox .wg-ico-red .wego-searchbox__adult-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/red-icon.png) no-repeat -1px -47px
+}
+
+.wego-searchbox .wg-ico-red .wego-searchbox__child-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/red-icon.png) no-repeat 0px -86px
+}
+
+.wego-searchbox .wg-ico-red .wego-searchbox__guest-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/red-icon.png) no-repeat 2px -43px
+}
+
+.wego-searchbox .wg-ico-red .wego-searchbox__room-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/red-icon.png) no-repeat 0px -114px
+}
+
+.wego-searchbox .wg-ico-white .wego-searchbox__hotels-icon,
+.wego-searchbox .wg-ico-white .wego-searchbox__flights-icon,
+.wego-searchbox .wg-ico-white a,
+.wego-searchbox .wg-ico-white h3,
+.wego-searchbox .wg-ico-white h3.quote-text {
+    color: #ffffff
+}
+
+.wego-searchbox .wg-ico-white .wego-searchbox__flights-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/grey-icon.png") no-repeat
+}
+
+.wego-searchbox .wg-ico-white .wego-searchbox__hotels-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/grey-icon.png") no-repeat 0px -23px
+}
+
+.wego-searchbox .wg-ico-white h3.quote-text {
+    color: #ffffff
+}
+
+.wego-searchbox .wg-ico-white .wego-searchbox__adult-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat -1px -47px
+}
+
+.wego-searchbox .wg-ico-white .wego-searchbox__child-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 0px -86px
+}
+
+.wego-searchbox .wg-ico-white .wego-searchbox__guest-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 2px -43px
+}
+
+.wego-searchbox .wg-ico-white .wego-searchbox__room-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 0px -114px
+}
+
+.wego-searchbox .wg-wb .wego-container .wego-searchbox__footer .search-button {
+    background: #2e70de
+}
+
+.wego-searchbox .wg-wr .wego-container .wego-searchbox__footer .search-button {
+    background: #cc3333
+}
+
+.wego-searchbox .wg-dr .wego-container {
+    color: #ffffff !important
+}
+
+.wego-searchbox .wg-dr .wego-container .wego-searchbox__hotels-icon,
+.wego-searchbox .wg-dr .wego-container .wego-searchbox__flights-icon,
+.wego-searchbox .wg-dr .wego-container a,
+.wego-searchbox .wg-dr .wego-container h3,
+.wego-searchbox .wg-dr .wego-container h3.quote-text {
+    color: #ffffff
+}
+
+.wego-searchbox .wg-dr .wego-container .tab-content {
+    background: #3a3a3a
+}
+
+.wego-searchbox .wg-dr .wego-container h4,
+.wego-searchbox .wg-dr .wego-container li {
+    color: #ffffff !important
+}
+
+.wego-searchbox .wg-dr .wego-container .wego-searchbox__flights-icon {
+    background: #3a3a3a
+}
+
+.wego-searchbox .wg-dr .wego-container .wego-searchbox__flights-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/grey-icon.png") no-repeat
+}
+
+.wego-searchbox .wg-dr .wego-container .wego-searchbox__hotels-icon {
+    background: #3a3a3a
+}
+
+.wego-searchbox .wg-dr .wego-container .wego-searchbox__hotels-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/grey-icon.png") no-repeat 0px -23px
+}
+
+.wego-searchbox .wg-dr .wego-container h3.quote-text {
+    color: #e67e22
+}
+
+.wego-searchbox .wg-dr .wego-container .wego-searchbox__adult-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat -1px -47px
+}
+
+.wego-searchbox .wg-dr .wego-container .wego-searchbox__child-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 0px -86px
+}
+
+.wego-searchbox .wg-dr .wego-container .wego-searchbox__guest-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 2px -43px
+}
+
+.wego-searchbox .wg-dr .wego-container .wego-searchbox__room-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 0px -114px
+}
+
+.wego-searchbox .wg-gw .wego-container {
+    color: #ffffff !important
+}
+
+.wego-searchbox .wg-gw .wego-container .tab-content {
+    background-color: #82b718
+}
+
+.wego-searchbox .wg-gw .wego-container .wego-searchbox__flights-icon {
+    background: #82b718
+}
+
+.wego-searchbox .wg-gw .wego-container .wego-searchbox__hotels-icon {
+    background: #82b718
+}
+
+.wego-searchbox .wg-gw .wego-container h4,
+.wego-searchbox .wg-gw .wego-container li {
+    color: #ffffff !important
+}
+
+.wego-searchbox .wg-bw .wego-container {
+    color: #ffffff !important
+}
+
+.wego-searchbox .wg-bw .wego-container .wego-searchbox__hotels-icon,
+.wego-searchbox .wg-bw .wego-container .wego-searchbox__flights-icon,
+.wego-searchbox .wg-bw .wego-container a,
+.wego-searchbox .wg-bw .wego-container h3,
+.wego-searchbox .wg-bw .wego-container h3.quote-text {
+    color: #ffffff
+}
+
+.wego-searchbox .wg-bw .wego-container h4,
+.wego-searchbox .wg-bw .wego-container li {
+    color: #ffffff !important
+}
+
+.wego-searchbox .wg-bw .wego-container .tab-content {
+    background: #407ee5
+}
+
+.wego-searchbox .wg-bw .wego-container .wego-searchbox__flights-icon {
+    background: #407ee5
+}
+
+.wego-searchbox .wg-bw .wego-container .wego-searchbox__flights-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/grey-icon.png") no-repeat
+}
+
+.wego-searchbox .wg-bw .wego-container .wego-searchbox__hotels-icon {
+    background: #407ee5
+}
+
+.wego-searchbox .wg-bw .wego-container .wego-searchbox__hotels-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/grey-icon.png") no-repeat 0px -23px
+}
+
+.wego-searchbox .wg-bw .wego-container h3.quote-text {
+    color: #ffffff
+}
+
+.wego-searchbox .wg-bw .wego-container .wego-searchbox__adult-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat -1px -47px
+}
+
+.wego-searchbox .wg-bw .wego-container .wego-searchbox__child-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 0px -86px
+}
+
+.wego-searchbox .wg-bw .wego-container .wego-searchbox__guest-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 2px -43px
+}
+
+.wego-searchbox .wg-bw .wego-container .wego-searchbox__room-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 0px -114px
+}
+
+.wego-searchbox .wg-og .wego-container .tab-content,
+.wego-searchbox .wg-og .wego-container .wego-searchbox__flights-icon,
+.wego-searchbox .wg-og .wego-container .wego-searchbox__hotels-icon {
+    background: #ffbb39
+}
+
+.wego-searchbox .wg-og .wego-container .wego-searchbox__footer .search-button {
+    background: #7AB616
+}
+
+.wego-searchbox .wg-og .wego-container h3.quote-text {
+    color: #7AB616
+}
+
+.wego-searchbox .wg-rw .wego-container {
+    color: #ffffff !important
+}
+
+.wego-searchbox .wg-rw .wego-container .tab-content {
+    border: 1px solid;
+    background: #cc3333
+}
+
+.wego-searchbox .wg-rw .wego-container h4,
+.wego-searchbox .wg-rw .wego-container li {
+    color: #ffffff !important
+}
+
+.wego-searchbox .wg-rw .wego-container .wego-searchbox__flights-icon {
+    background: #cc3333
+}
+
+.wego-searchbox .wg-rw .wego-container .wego-searchbox__flights-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/grey-icon.png") no-repeat
+}
+
+.wego-searchbox .wg-rw .wego-container .wego-searchbox__hotels-icon {
+    background: #cc3333
+}
+
+.wego-searchbox .wg-rw .wego-container .wego-searchbox__hotels-icon:before {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/grey-icon.png") no-repeat 0px -23px
+}
+
+.wego-searchbox .wg-rw .wego-container .wego-searchbox__hotels-icon,
+.wego-searchbox .wg-rw .wego-container .wego-searchbox__flights-icon,
+.wego-searchbox .wg-rw .wego-container a,
+.wego-searchbox .wg-rw .wego-container h3,
+.wego-searchbox .wg-rw .wego-container h3.quote-text {
+    color: #ffffff
+}
+
+.wego-searchbox .wg-rw .wego-container .wego-searchbox__adult-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat -1px -47px
+}
+
+.wego-searchbox .wg-rw .wego-container .wego-searchbox__adult-icon:before {
+    color: #ffffff
+}
+
+.wego-searchbox .wg-rw .wego-container .wego-searchbox__child-icon:after {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 0px -86px
+}
+
+.wego-searchbox .wg-rw .wego-container .wego-searchbox__guest-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 2px -43px
+}
+
+.wego-searchbox .wg-rw .wego-container .wego-searchbox__room-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/grey-icon.png) no-repeat 0px -114px
+}
+
+.wego-searchbox .wego-searchbox__select-container {
+    display: block;
+    float: left;
+    padding-right: 1em;
+    line-height: 2em
+}
+
+.wego-searchbox .wego-searchbox__selectbox {
+    -webkit-appearance: none;
+    background-color: #ffffff;
+    background-position: right 7px top 10px;
+    background-size: 18px 18px;
+    background: url(http://www.wan.travel/assets/wan/searchbox/arrow-down.png) right no-repeat;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    color: #666666;
+    display: inline-block;
+    font-size: 14px;
+    opacity: 0;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    -moz-appearance: window
+}
+
+.wego-searchbox .wego-searchbox__default-select {
+    color: #666666;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    position: absolute;
+    text-transform: capitalize;
+    width: 50px;
+    word-wrap: normal
+}
+
+.wego-searchbox .wego-searchbox__default-select.select-wg_cabin_class {
+    width: inherit
+}
+
+.wego-searchbox .wego-searchbox__adult-icon:after {
+    width: 13px !important;
+    height: 37px;
+    line-height: 34px;
+    padding-right: 10px;
+    display: inline-block;
+    content: '';
+    position: relative;
+    top: 15px
+}
+
+.wego-searchbox .wego-searchbox__child-icon:after {
+    width: 16px !important;
+    height: 28px;
+    display: inline-block;
+    content: '';
+    position: relative;
+    top: 10px;
+    margin-left: 5px
+}
+
+.wego-searchbox .wego-searchbox__guest-icon:before {
+    width: 10px !important;
+    height: 41px;
+    padding-right: 15px;
+    float: left;
+    content: '';
+    margin-top: 10px
+}
+
+.wego-searchbox .wego-searchbox__cabin-select-container {
+    width: 100%;
+    padding-top: 1em
+}
+
+@media only screen and (min-width: 760px) {
+    .wego-searchbox .wego-searchbox__cabin-select-container {
+        width: 50%
+    }
+}
+
+.wego-searchbox .wego-searchbox__cabin-select-container .wego-searchbox__cabin-icon {
+    float: left;
+    padding-right: 1em;
+    padding-top: 1em
+}
+
+.wego-searchbox .wego-searchbox__cabin-select-container span.wg-select-moz {
+    width: 110px;
+    top: 0
+}
+
+.wego-searchbox .wego-searchbox__room-icon:before {
+    background: url(http://www.wan.travel/assets/wan/searchbox/green-icon.png) no-repeat 0px -114px;
+    width: 20px !important;
+    height: 30px;
+    padding-right: 10px;
+    float: left;
+    content: '';
+    margin-top: 22px
+}
+
+.wego-searchbox .wego-searchbox__field-container {
+    width: 100%;
+    font-size: 12px;
+    padding: 1em 1em 0em
+}
+
+@media only screen and (min-width: 760px) {
+    .wego-searchbox .wego-searchbox__field-container {
+        width: 50%;
+        float: left
+    }
+}
+
+@media only screen and (min-width: 1020px) {
+    .wego-searchbox .wego-searchbox__field-container {
+        width: 25%
+    }
+}
+
+.wego-searchbox .wego-searchbox__field-container h4,
+.wego-searchbox .wego-searchbox__field-container h3 {
+    text-transform: uppercase
+}
+
+.wego-searchbox .wego-searchbox__field-container__location {
+    width: 100%
+}
+
+@media only screen and (min-width: 1020px) {
+    .wego-searchbox .wego-searchbox__field-container__location {
+        width: 50%
+    }
+}
+
+.wego-searchbox .wego-searchbox__flights-from,
+.wego-searchbox .wego-searchbox__flights-to {
+    display: none;
+    font-size: 12px
+}
+
+@media only screen and (min-width: 760px) {
+    .wego-searchbox .wego-searchbox__flights-from,
+    .wego-searchbox .wego-searchbox__flights-to {
+        display: block
+    }
+}
+
+.wego-searchbox .wego-searchbox__selectboxes {
+    *zoom: 1;
+    padding-top: 0
+}
+
+.wego-searchbox .wego-searchbox__selectboxes:before,
+.wego-searchbox .wego-searchbox__selectboxes:after {
+    content: " ";
+    display: table
+}
+
+.wego-searchbox .wego-searchbox__selectboxes:after {
+    clear: both
+}
+
+@media only screen and (min-width: 760px) {
+    .wego-searchbox .wego-searchbox__selectboxes {
+        width: 100%
+    }
+}
+
+.wego-searchbox .wan-logo {
+    background: url(logo.png) no-repeat;
+    height: 53px;
+    margin: 0 auto;
+    width: 115px
+}
+
+@media only screen and (min-width: 760px) {
+    .wego-searchbox .wan-logo {
+        display: none
+    }
+}
+
+.wego-searchbox .wego-searchbox__footer {
+    *zoom: 1;
+    padding: 1em 0
+}
+
+.wego-searchbox .wego-searchbox__footer:before,
+.wego-searchbox .wego-searchbox__footer:after {
+    content: " ";
+    display: table
+}
+
+.wego-searchbox .wego-searchbox__footer:after {
+    clear: both
+}
+
+@media only screen and (min-width: 760px) {
+    .wego-searchbox .wego-searchbox__footer {
+        clear: both
+    }
+}
+
+.wego-searchbox .wego-searchbox__footer .wan-logo {
+    background: url(logo.png) no-repeat;
+    float: left;
+    height: 53px;
+    width: 135px;
+    display: none
+}
+
+@media only screen and (min-width: 760px) {
+    .wego-searchbox .wego-searchbox__footer .wan-logo {
+        display: block
+    }
+}
+
+.wego-searchbox .wego-searchbox__footer .quote-text {
+    display: none;
+    font-size: 10px;
+    font-weight: bold;
+    color: #cc6600;
+    float: right;
+    clear: none;
+    margin-right: 1em;
+    font-style: italic
+}
+
+@media only screen and (min-width: 760px) {
+    .wego-searchbox .wego-searchbox__footer .quote-text {
+        display: block;
+        margin-top: 0
+    }
+}
+
+.wego-searchbox .wego-searchbox__footer .search-button {
+    background: #e67e22;
+    border-radius: 5px;
+    border: 0px;
+    color: #fff;
+    float: right;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 400;
+    height: 40px;
+    margin-right: 0.5em;
+    padding: 0px;
+    text-transform: uppercase;
+    width: 175px
+}
+
+.wego-searchbox .wego-searchbox__switch {
+    background: transparent url("http://www.wan.travel/assets/wan/searchbox/arrow.png") no-repeat;
+    cursor: pointer;
+    display: none;
+    float: left;
+    height: 30px;
+    margin: 0 5px;
+    position: relative;
+    top: 53px;
+    width: 20px
+}
+
+@media only screen and (min-width: 760px) {
+    .wego-searchbox .wego-searchbox__switch {
+        display: none
+    }
+}
+
+.wego-searchbox br {
+    display: none
+}
+
+@media only screen and (min-width: 760px) {
+    .wego-searchbox br {
+        display: block
+    }
+}

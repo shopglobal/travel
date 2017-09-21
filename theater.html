@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Site</title>
+  <script src="https://cdn.jsdelivr.net/theaterjs/latest/theater.min.js"></script>
+</head>
+  <style>
+  @import 'https://fonts.googleapis.com/css?family=Cutive';
+
+$font-family-base: 'Cutive', serif;;
+$font-size-root: 14px;
+$font-size-base: 1rem;
+$line-height-base: 1.4;
+
+$color-black: #222;
+$color-white: #ededed;
+$color-red: #c92b2b;
+
+$spacing: 2rem;
+$spacing-large: $spacing * 3;
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: $font-size-root;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-black;
+  background-color: $color-white;
+  transition:
+    background-color 150ms ease-out,
+    color 150ms ease-out;
+}
+
+.dark {
+  color: $color-white;
+  background-color: $color-black;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid;
+
+  &:focus,
+  &:hover {
+    box-shadow: inset 0 -8px 0 $color-red;
+  }
+}
+
+p {
+  opacity: .6;
+  margin: 0 0 .6rem 0;
+  transition: opacity 300ms ease-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.scene {
+  padding: $spacing-large $spacing;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.actor {
+  font-size: 2.8rem;
+  display: flex;
+  margin-bottom: $spacing;
+
+  &:last-of-type {
+    margin-bottom: $spacing-large;
+  }
+}
+
+.actor__content {
+  flex-grow: 1;
+}
+
+@keyframes blink {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.actor__content--typing::after {
+  content: '|';
+  animation: blink 500ms infinite;
+}
+</style>
+
+
+<body>
+
+//
+<div class="jumbotron">
+
+
+
+
+
+      <main class="scene">
+        <div class="actor">
+        <div class="actor__prefix">-</div>
+        <div id="vader" class="actor__content"></div>
+        </div>
+
+        <div class="actor">
+        <div class="actor__prefix">-</div>
+        <div id="luke" class="actor__content"></div>
+        </div>
+
+
+
+
+
+
+  
+
+
+        </main>
+</div>
+//
+<script type="text/javascript">
+  /*
+ * TheaterJS, a typing effect mimicking human behavior.
+ *
+ * Github repository: 
+ * https://github.com/Zhouzi/TheaterJS
+ *
+ */
+
+var theater = theaterJS()
+
+theater
+  .on('type:start, erase:start', function () {
+    theater.getCurrentActor().$element.classList.add('actor__content--typing')
+  })
+  .on('type:end, erase:end', function () {
+    theater.getCurrentActor().$element.classList.remove('actor__content--typing')
+  })
+  .on('type:start, erase:start', function () {
+    if (theater.getCurrentActor().name === 'vader') {
+      document.body.classList.add('dark')
+    } else {
+      document.body.classList.remove('dark')
+    }
+  })
+
+theater
+  .addActor('vader', { speed: 0.8, accuracy: 0.6 })
+  .addActor('luke')
+  .addScene('vader:Where would you like to go?', 600)
+  .addScene('luke:What?', 400)
+  .addScene('vader:Anywhere in the world. . .', 400)
+  .addScene('luke: Im', -3, '...', 600, ' listening ', 600)
+  .addScene('vader:What if I told you, you could . .', 400)
+  .addScene('luke:Wow! ! !', -3, '!!! ', 600, 'Lets go! ', 600)
+
+
+  .addScene(theater.replay.bind(theater))
+</script>
+
+</body>
+</html>

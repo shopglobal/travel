@@ -1,0 +1,9 @@
+https://maps.googleapis.com/maps/api/place/textsearch/json?query=
+
+cityStateEtc
+
+&key=
+
+yourApiKey
+
+AIzaSyAy0tGj8xyO9xD8vvnbdq4398PYN05jhLc

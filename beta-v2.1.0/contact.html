@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<header>
+	<title> Contact </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+	<script src="https://use.fontawesome.com/5cecdc69bf.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</header>
+ <body>
+	<header class="main" id="contact">
+		<div class="overlay"></div>
+		<!-- <div class="border"></div> -->
+		<h1> Contact </h1>
+		<nav class="main">
+			<ul>
+				<a href="index.html"><li> Home </li></a>
+				<a href="about.html"><li> About </li></a>
+				<a href="index.html"><li class="logo-globe"> <i class="fa fa-globe" aria-hidden="true"></i></li></a>
+				<a href="discover.html"><li> Discover </li></a>
+				<a href="contact.html"><li> Contact </li></a>
+			</ul>
+		</nav>
+	</header>
+	<div class="container">
+		<div class="contact-wrapper">
+			
+			<div class="left">
+				<p style="font-size: 1.3em;"><b><span style="font-size: 1.5em; color: #5DBCD2;"> Say hello! </span></b> Drop me an email </p>
+				<form action="mailer.php" method="post">
+				  <span> * </span><input type="text" name="first_name" placeholder="Your name" required><br>
+				  <span> * </span><input type="text" name="email" placeholder="Your email address" required><br>
+				  <span> * </span><textarea placeholder="Your message" rows="5" name="message" cols="30"></textarea>
+			  	  <input type="submit" class="btn-submit" name="submit" value="Submit">
+
+			   </form>
+			</div>
+			<div class="right">
+			   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.1763029788085!2d-81.3077454844987!3d28.744152682373933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e76d22c045afc9%3A0xf257c1e18146fe82!2s100+Weldon+Blvd%2C+Sanford%2C+FL+32773!5e0!3m2!1sen!2sus!4v1504158516294" width="1000" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		</div>
+		<aside class="quote">
+			<p> " Don't call it a dream. Call it a plan. " </p>
+		</aside>
+	</div>
+	
+	<footer class="bottom">
+		<p><b> Photo courtesy of <span><a href="#"> Adobe Stock </a></span>. For Educational Purposes. </b></p>
+	</footer>	
+</body>

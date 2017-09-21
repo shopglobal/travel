@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:description" content="vTravel">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+
+
+
+  <script src="https://vtravel.superstore.travel/assets/shared/lib-7d94b1e9e35f0153281ecfd458387d8e.js" type="text/javascript"></script>
+  <script src="https://vtravel.superstore.travel/assets/shared/ie_sectiontag-a66c8dd2a34b599f88d53daae7dd2ab9.js" type="text/javascript"></script>
+
+  <link href="https://vtravel.superstore.travel/assets/responsive/stylesheets/theme-7f6895c8e4f190fb446d59d5dfa46bb4.css" media="screen" rel="stylesheet" type="text/css" />
+  <link class="themer" href="https://vtravel.superstore.travel/assets/generate/stylesheets/color_customizations.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="https://vtravel.superstore.travel/assets/generate/stylesheets/customisations.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+  <!--[if lt IE 9]>
+	<script src="https://vtravel.superstore.travel/assets/shared/respond/respond.min-b889036f2a1147938e4995f6e9768dc4.js" type="text/javascript"></script>
+	<link href="https://0.w3g0.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+	<link href="https://vtravel.superstore.travel/assets/shared/respond/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+	<script src="https://vtravel.superstore.travel/assets/shared/respond/respond.proxy-816ad55f7d752c492257c92b47048f17.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+  <!-- Brand's customized head section starts here! -->
+		<title>vTravel</title>
+<!-- Brand's customized head section ends here! -->
+
+</head>
+
+<body id="hotels">
+
+<script type="text/javascript">
+  var brand_default_locale = "en";
+</script>
+
+
+<!-- Header theme customisation starts here! -->
+
+  <header class="top-bar">
+    <div class="content-wrapper">
+      <div id="wan-logo" class="customization__top-bar">
+        <h1>vTravel</h1>
+      </div>
+    </div>
+  </header>
+
+
+<div class="content-wrapper settings-and-navs">
+  <div class="header-settings">
+	  <div>
+      <select class="header-settings__select" id="locale" name="locale"><option value="/" selected="true">English</option><option value="/de/" >Deutsch</option><option value="/es/" >Español</option><option value="/fr/" >Français</option><option value="/nl/" >Nederlands</option><option value="/ru/" >Русский</option><option value="/sv/" >Svenska</option><option value="/th/" >ภาษาไทย</option><option value="/vi/" >Tiếng Việt</option><option value="/zh-cn/" >简体中文</option><option value="/zh-hk/" >繁體中文</option><option value="/zh-tw/" >繁體中文</option><option value="/ja/" >日本語</option><option value="/it/" >Italiano</option></select>
+    </div>
+  <div class="">
+    <select class="header-settings__select" id="currency" name="currency"><option value="AUD" >AUD - Australian Dollar (A$)</option><option value="EUR" >EUR - Euro (€)</option><option value="GBP" >GBP - British Pound (£)</option><option value="HKD" >HKD - Hong Kong Dollar (HK$)</option><option value="JPY" >JPY - Japanese Yen (¥)</option><option value="USD" selected="true">USD - U.S. Dollar (US$)</option></select>
+  </div>
+</div>
+
+
+  <div class="content-wrapper wego__nav">
+    <ul class="homepage-nav">
+        <li><a href="#hotels" class="hotels-nav">Hotels</a></li>
+        <li><a href="#flights" class="flights-nav">Flights</a></li>
+    </ul>
+  </div>
+</div>
+<span></span>
+</div>
+
+<div id="results-airline" class="airline-cards"></div>
+<div id="results-list" class="cards" data-direct="Direct" data-via="Via"></div>
+
+<div id="pagination" class="pagination" data-prev="Prev" data-next="Next"></div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/mustache" id="template-out-of">
+  {{{ tplReturnArrow }}} <strong class="results-header"><span class="flight-count">{{ filtered_count }}</span> out of <span class="flight-count">{{ count }}</span> {{ type }}</strong>
+</script>
+
+<script type="text/mustache" id="template-found">
+  {{{ tplReturnArrow }}} <strong class="results-header">Found <span class="flight-count">{{ count }}</span> {{ type }}</strong>
+</script>
+
+<script type="text/mustache" id="template-flight-card">
+
+  <div class="card-body">
+    <div class="itinerary_left flight-card__itinerary-left">
+      <p class="itinerary_depart clearfix flight-card__itinerary-depart">
+        <span class="airline_codes flight-card__airline-code">
+          <img class="flight-card__airline-image" alt="{{ outbound_airline_code }}" src="https://0.omg.io/wego/image/upload/c_fit,w_27,h_23/flights/airlines_square/{{ outbound_airline_code }}.png">
+        </span>
+        <span class="outbound_loc flight-card__location">{{ outbound_departure_code }}</span>
+        <span class="outbound_time flight-card__time flight-card__outbound-time" data-datetime="{{ outbound_departure_date_time }}">{{ outbound_departure_time }}</span>
+        <span class="inbound_loc flight-card__location">{{ outbound_arrival_code }}</span>
+        <span class="inbound_time" data-datetime="{{ outbound_arrival_date_time }}">{{ outbound_arrival_time }}</span>
+        <span class="outbound_designator_code" data-designator-code="{{ outbound_designator_code }}"> </span>
+        <span class="duration flight-card__duration">{{ outbound_duration }}</span>
+        <span class="via flight-card__via">{{ outbound_flight_type }}</span>
+      </p>
+      {{^one_way}}
+      <p class="itinerary_arrive clearfix flight-card__itinerary-arrive">
+        <span class="airline_codes flight-card__airline-code">
+          <img class="flight-card__airline-image" alt="{{ inbound_airline_code }}" src="https://0.omg.io/wego/image/upload/c_fit,w_27,h_23/flights/airlines_square/{{ inbound_airline_code }}.png">
+        </span>
+        <span class="outbound_loc flight-card__location">{{ inbound_departure_code }}</span>
+        <span class="inbound_time flight-card__time flight-card__inbound-time">{{ inbound_departure_time }}</span>
+        <span class="inbound_loc flight-card__location">{{ inbound_arrival_code }}</span>
+        <span class="inbound_time">{{ inbound_arrival_time }}</span>
+        <span class="inbound_designator_code" data-designator-code="{{ inbound_designator_code }}"> </span>
+        <span class="duration flight-card__duration">{{ inbound_duration }}</span>
+        <span class="via flight-card__via">{{ inbound_flight_type }}</span>
+      </p>
+      {{/one_way}}
+    </div>
+
+    <div class="itinerary_right flight-card__itinerary-right">
+      <a href="#" class="list_item_details flight-card__details" data-id="{{ route_id }}" data-close="close">Flight details</a>
+      <a href="" class="list_item_price_link flight-card__price-link">
+        <p class="amount">
+          {{#currencyFormat}}
+            <span class="price flight-card__price">{{{ price_str }}}</span>
+            <span class="currency">{{ currency_symbol }}</span>
+          {{/currencyFormat}}
+          {{^currencyFormat}}
+            <span class="currency">{{ currency_symbol }}</span>
+            <span class="price flight-card__price">{{{ price_str }}}</span>
+          {{/currencyFormat}}
+        </p>
+      </a>
+      <a href="{{cheapestFareDeepLink}}" target="_blank" class="item_select item_button card-body__item-button">Select</a>
+    </div>
+
+    <div class="list_rates flight-card__rates {{#hasHiddenRates}}has-rates-hidden{{/hasHiddenRates}}">
+      <ul>
+      {{ #providerFareList }}
+        <li class="flight-card__rate {{#isHidden}}is-hidden{{/isHidden}}">
+          <a target="_blank" class="flight-card__deeplink" href="{{providerDeeplink}}">
+            <span class="list_rates_provider_code flight-card__rate__provider-code">{{providerCode}}</span>
+            <span class="list_rates_price flight-card__rate__price">
+            {{#currencyFormat}}
+              <span class="amount">{{{ providerPrice }}}</span><span class="currency">{{ currency_symbol }}</span>
+            {{/currencyFormat}}
+            {{^currencyFormat}}
+              <span class="currency">{{ currency_symbol }}</span><span class="amount">{{{ providerPrice }}}</span>
+            {{/currencyFormat}}
+            </span>
+          </a>
+        </li>
+      {{ /providerFareList }}
+      </ul>
+      <span class="rates-see-more flight-card__see-more">Show more</span>
+      <span class="rates-see-less flight-card__see-less">Show less</span>
+    </div>
+
+    <div class="flights_outbound_details">
+    {{ #flightsRouteDetailsOutbound }}
+      <div class="outbound_{{ outboundCount }}" data-designator-code="{{ outboundDesignatorCode }}" data-departure-name="{{ outboundDepartureName }}" data-departure-code="{{ outboundDepartureCode }}" data-departure-date-time="{{ outboundDepartureDateTime }}" data-arrival-name="{{ outboundArrivalName }}" data-arrival-code="{{ outboundArrivalCode }}" data-arrival-date-time="{{ outboundArrivalDateTime }}" data-airline-code="{{ outboundAirlineCode }}" data-operating-airline-name="{{ outboundOperatingAirlineName }}" data-duration="{{ outboundDuration }}"></div>
+    {{ /flightsRouteDetailsOutbound }}
+    </div>
+    <div class="flights_inbound_details">
+    {{ #flightsRouteDetailsInbound }}
+      <div class="inbound_{{ inboundCount }}" data-designator-code="{{ inboundDesignatorCode }}" data-departure-name="{{ inboundDepartureName }}" data-departure-code="{{ inboundDepartureCode }}" data-departure-date-time="{{ inboundDepartureDateTime }}" data-arrival-name="{{ inboundArrivalName }}" data-arrival-code="{{ inboundArrivalCode }}" data-arrival-date-time="{{ inboundArrivalDateTime }}" data-airline-code="{{ inboundAirlineCode }}" data-operating-airline-name="{{ inboundOperatingAirlineName }}" data-duration="{{ inboundDuration }}"></div>
+    {{ /flightsRouteDetailsInbound }}
+    </div>
+  </div> 
+
+
+</script>
+
+<!-- // MARKEVANS -->
+<div class="content-wrapper">
+    <p id="msg_empty_result" class="search-results__warning flash warning hide" data-errormsg="Sorry, an error occurred while processing your request. Please try again later.">No results found. Please try again later.</p>
+    <p id="msg_empty" class="search-results__warning flash warning hide" style="display: none;">Oops, looks like your filter choices have hidden all flights. You can adjust the filters on the left or <a href="" id="clear_filters_all_hidden" class="clear_filters">Reset Filters</a>  to show all of them</p>
+    <h3 id="wan-flights-results-header" class="search-results__header" data-searching="Searching" data-airlines="Airlines" data-flights="Flights" data-for_airlines="Searching for Airlines" data-for_flights="Searching for flights">
+  <a href="#" class="return-home"><i class="icon-circle-arrow-left"></i></a>  <strong class="results-header">Found <span class="flight-count">7</span> Airlines</strong>
+</h3>
+    <div id="wan-results-flights" class="search-results__body" style="display: block;">
+      <div class="search-results__filter js-filters-toggle">Filter</div>
+      <div class="search-results__nav-listings" id="nav-listings">
+        <ul>
+          <li><a class="active" id="nav-listings-summary" href="#">Airlines</a></li>
+          <li><a id="nav-listings-list" href="#">Flights</a></li>
+        </ul>
+      </div>
+      <div id="result-filters-flights" class="filters js-filters is-collapsed" data-selectall="Select all">
+  <span class="filters__close js-filters-toggle"><i>×</i></span>
+  <h3 class="filters__title">Filters</h3>
+
+  <div id="filter-price" class="filter">
+    <h4 class="filter__title">Price</h4>
+    <div id="flights-price-slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%;"></a></div>
+    <div id="slider-amount" class="filter__slider-amount" data-min="" data-max="">
+
+  <span class="min price">
+    <em class="currency">US$</em><strong class="amount">140</strong>
+  </span> -
+  <span class="max price">
+    <em class="currency">US$</em><strong class="amount">760</strong>
+  </span>
+
+</div>
+  </div>
+
+  <div id="filter-stop_type_filters" class="filter" data-direct="Direct" data-stop="1 stop" data-stops="2+ stops">
+    <h4 class="filter__title">Stops</h4>
+    <ul class="checklist filter__checklist"><li><label><input class="reset" type="checkbox" value="false" disabled=""> Select all </label></li><li><label><input name="stop_type_filters[]" type="checkbox" value="none"> <span class="item-name" title="Direct">Direct</span><span class="item-price">US$140</span></label></li><li><label><input name="stop_type_filters[]" type="checkbox" value="one"> <span class="item-name" title="1 stop">1 stop</span><span class="item-price">US$149</span></label></li><li><label><input name="stop_type_filters[]" type="checkbox" value="two_plus"> <span class="item-name" title="2+ stops">2+ stops</span><span class="item-price">US$154</span></label></li></ul>
+    <a href="#" class="toggle js-show-more" data-toggle="Show less" data-toggle-original="Show more" style="display: none;">Show more</a>
+  </div>
+
+  <div id="filter-airline_filters" class="filter">
+    <h4 class="filter__title">Airlines</h4>
+    <ul class="checklist filter__checklist"><li><label><input class="reset" type="checkbox" value="false" disabled=""> Select all </label></li><li><label><input name="airline_filters[]" type="checkbox" value="AS"> <span class="item-name" title="Alaska Airlines">Alaska Airlines</span><span class="item-price">US$223</span></label></li><li><label><input name="airline_filters[]" type="checkbox" value="DL"> <span class="item-name" title="Delta Air Lines">Delta Air Lines</span><span class="item-price">US$228</span></label></li><li><label><input name="airline_filters[]" type="checkbox" value="F9"> <span class="item-name" title="Frontier Airlines">Frontier Airlines</span><span class="item-price">US$246</span></label></li><li><label><input name="airline_filters[]" type="checkbox" value="B6"> <span class="item-name" title="JetBlue Airways">JetBlue Airways</span><span class="item-price">US$240</span></label></li><li><label><input name="airline_filters[]" type="checkbox" value="NK"> <span class="item-name" title="Spirit Airlines">Spirit Airlines</span><span class="item-price">US$140</span></label></li><li><label><input name="airline_filters[]" type="checkbox" value="UA"> <span class="item-name" title="United Airlines">United Airlines</span><span class="item-price">US$250</span></label></li><li><label><input name="airline_filters[]" type="checkbox" value="VX"> <span class="item-name" title="Virgin America">Virgin America</span><span class="item-price">US$231</span></label></li></ul>
+    <a href="#" class="toggle js-show-more" data-toggle="Show less" data-toggle-original="Show more" style="display: none;">Show more</a>
+  </div>
+
+  <div id="filter-arrival_airport_filters" class="filter">
+    <h4 class="filter__title">Arrival</h4>
+    <ul class="checklist filter__checklist"><li><label><input class="reset" type="checkbox" value="false" disabled=""> Select all </label></li><li><label><input name="arrival_airport_filters[]" type="checkbox" value="LGB"> <span class="item-name" title="Long Beach Airport">Long Beach Air...</span><span class="item-price">US$260</span></label></li><li><label><input name="arrival_airport_filters[]" type="checkbox" value="LAX"> <span class="item-name" title="Los Angeles International Airport">Los Angeles In...</span><span class="item-price">US$140</span></label></li></ul>
+    <a href="#" class="toggle js-show-more" data-toggle="Show less" data-toggle-original="Show more" style="display: none;">Show more</a>
+  </div>
+
+  <div id="filter-departure_airport_filters" class="filter">
+    <h4 class="filter__title">Takeoff</h4>
+    <ul class="checklist filter__checklist"><li><label><input class="reset" type="checkbox" value="false" disabled=""> Select all </label></li><li><label><input name="departure_airport_filters[]" type="checkbox" value="FLL"> <span class="item-name" title="Fort Lauderdale/Hollywood Intl Airport">Fort Lauderdal...</span><span class="item-price">US$140</span></label></li><li><label><input name="departure_airport_filters[]" type="checkbox" value="MIA"> <span class="item-name" title="Miami International Airport">Miami Internat...</span><span class="item-price">US$228</span></label></li></ul>
+    <a href="#" class="toggle js-show-more" data-toggle="Show less" data-toggle-original="Show more" style="display: none;">Show more</a>
+  </div>
+
+  <div id="filter-stopover_airport_filters" class="filter">
+    <h4 class="filter__title">Stopover</h4>
+    <ul class="checklist filter__checklist"><li><label><input class="reset" type="checkbox" value="false" disabled=""> Select all </label></li><li><label><input name="stopover_airport_filters[]" type="checkbox" value="ATL"> <span class="item-name" title="Atlanta Hartsfield-Jackson Intl Airport">Atlanta Hartsf...</span><span class="item-price">US$151</span></label></li><li><label><input name="stopover_airport_filters[]" type="checkbox" value="AUS"> <span class="item-name" title="Austin-Bergstrom International Airport">Austin-Bergstr...</span><span class="item-price">US$408</span></label></li><li><label><input name="stopover_airport_filters[]" type="checkbox" value="BOS"> <span class="item-name" title="Boston Logan International Airport">Boston Logan I...</span><span class="item-price">US$367</span></label></li><li><label><input name="stopover_airport_filters[]" type="checkbox" value="ORD"> <span class="item-name" title="Chicago O'Hare International Airport">Chicago O'Hare...</span><span class="item-price">US$154</span></label></li><li><label><input name="stopover_airport_filters[]" type="checkbox" value="DFW"> <span class="item-name" title="Dallas/Fort Worth Intl Airport">Dallas/Fort Wo...</span><span class="item-price">US$156</span></label></li><li><label><input name="stopover_airport_filters[]" type="checkbox" value="DEN"> <span class="item-name" title="Denver Intl Airport">Denver Intl Ai...</span><span class="item-price">US$154</span></label></li><li><label><input name="stopover_airport_filters[]" type="checkbox" value="DTW"> <span class="item-name" title="Detroit Wayne County">Detroit Wayne ...</span><span class="item-price">US$199</span></label></li><li style="display: none;"><label><input name="stopover_airport_filters[]" type="checkbox" value="IAH"> <span class="item-name" title="Houston George Bush Intercontinental Airport">Houston George...</span><span class="item-price">US$154</span></label></li><li style="display: none;"><label><input name="stopover_airport_filters[]" type="checkbox" value="LAS"> <span class="item-name" title="Las Vegas McCarran International Airport">Las Vegas McCa...</span><span class="item-price">US$149</span></label></li><li style="display: none;"><label><input name="stopover_airport_filters[]" type="checkbox" value="MSP"> <span class="item-name" title="Minneapolis International Airport">Minneapolis In...</span><span class="item-price">US$228</span></label></li><li style="display: none;"><label><input name="stopover_airport_filters[]" type="checkbox" value="MSY"> <span class="item-name" title="New Orleans Louis Armstrong Intl Airport">New Orleans Lo...</span><span class="item-price">US$154</span></label></li><li style="display: none;"><label><input name="stopover_airport_filters[]" type="checkbox" value="JFK"> <span class="item-name" title="New York J F Kennedy International Airport">New York J F K...</span><span class="item-price">US$342</span></label></li><li style="display: none;"><label><input name="stopover_airport_filters[]" type="checkbox" value="EWR"> <span class="item-name" title="Newark Liberty International Airport">Newark Liberty...</span><span class="item-price">US$414</span></label></li><li style="display: none;"><label><input name="stopover_airport_filters[]" type="checkbox" value="MCO"> <span class="item-name" title="Orlando International Airport">Orlando Intern...</span><span class="item-price">US$228</span></label></li><li style="display: none;"><label><input name="stopover_airport_filters[]" type="checkbox" value="SFO"> <span class="item-name" title="San Francisco International Airport">San Francisco ...</span><span class="item-price">US$250</span></label></li></ul>
+    <a href="#" class="toggle js-show-more" data-toggle="Show less" data-toggle-original="Show more" style="display: block;">Show more</a>
+  </div>
+
+  <div id="filter-provider_filters" class="filter filter__provider-filters">
+    <h4 class="filter__title">Websites Searched</h4>
+    <ul class="checklist filter__checklist"></ul>
+    <a href="#" class="toggle js-show-more" data-toggle="Show less" data-toggle-original="Show more" style="display: none;">Show more</a>
+  </div>
+
+<!--   <div id="filter-chains-brands" class="filter">
+    <h4>< %= t('common.chain_brands')%></h4>
+    <ul class="checklist chains"></ul>
+    <ul class="checklist brands"></ul>
+    <a href="#" class="toggle-brands">< %= t('txt.show_more')%></a>
+  </div> -->
+
+  <a href="#" class="reset-filters filters__reset">Reset Filters</a>
+
+</div>
+
+<script type="text/mustache" id="template-flight-slider-amount">
+
+  <span class="min price">
+    <em class="currency">{{ currency }}</em><strong class="amount">{{{ minAmount }}}</strong>
+  </span> -
+  <span class="max price">
+    <em class="currency">{{ currency }}</em><strong class="amount">{{{ maxAmount }}}</strong>
+  </span>
+
+</script>
+
+<script type="text/mustache" id="template-flight-slider-amount-rtl">
+
+  <span class="min price">
+    <strong class="amount">{{{ minAmount }}}</strong><em class="currency">{{ currency }}</em>
+  </span> -
+  <span class="max price">
+    <strong class="amount">{{{ maxAmount }}}</strong><em class="currency">{{ currency }}</em>
+  </span>
+
+</script>
+      <div id="sort-flights" class="sort">
+  <span class="sort__title">Sort by:</span>
+
+  <a href="#" id="sort-outbound_departure_time" class="sort-flight sort__depart">Depart
+    <i class="icon-long-arrow-up sort__icon-caret-up"></i>
+    <i class="icon-long-arrow-down sort__icon-caret-down"></i>
+  </a>
+  <a href="#" id="sort-inbound_departure_time" class="sort-flight sort__arrive">Arrive
+    <i class="icon-long-arrow-up sort__icon-caret-up"></i>
+    <i class="icon-long-arrow-down sort__icon-caret-down"></i>
+  </a>
+  <a href="#" id="sort-duration" class="sort-flight sort__duration">Duration
+    <i class="icon-long-arrow-up sort__icon-caret-up"></i>
+    <i class="icon-long-arrow-down sort__icon-caret-down"></i>
+  </a>
+  <a href="#" id="sort-price" class="sort-flight sort__flight-price selected asc">Price
+    <i class="icon-long-arrow-up sort__icon-caret-up"></i>
+    <i class="icon-long-arrow-down sort__icon-caret-down"></i>
+  </a>
+
+</div>
+
+<div id="results-airline" class="airline-cards"><div class="wan-flight">
+
+  <div class="card-body">
+    <div class="airline_left airline-card__left">
+      <span class="airline_codes airline-card__code" data-code="NK">
+        <img alt="NK" src="http://0.omg.io/wego/image/upload/c_fit,w_80,h_27/flights/airlines_rectangular/NK.png">
+      </span>
+      <span class="airline_name airline-card__name">Spirit Airlines</span>
+    </div>
+
+    <div class="airline_right airline-card__right">
+      <span class="airline_fares_count airline-card__fares-count">see all <a href="#">251 fares</a></span>
+      <a href="" class="airline_best_price airline-card__best-price airline-card__link">
+        <p class="amount">
+            <span class="currency">US$</span>
+            <span class="price">140</span>
+        </p>
+      </a>
+      <a href="" target="_blank" class="item_select item_button card-body__item-button airline-card__link">Select</a>
+    </div>
+  </div>
+
+</div><div class="wan-flight">
+
+  <div class="card-body">
+    <div class="airline_left airline-card__left">
+      <span class="airline_codes airline-card__code" data-code="AS">
+        <img alt="AS" src="http://0.omg.io/wego/image/upload/c_fit,w_80,h_27/flights/airlines_rectangular/AS.png">
+      </span>
+      <span class="airline_name airline-card__name">Alaska Airlines</span>
+    </div>
+
+    <div class="airline_right airline-card__right">
+      <span class="airline_fares_count airline-card__fares-count">see all <a href="#">11 fares</a></span>
+      <a href="" class="airline_best_price airline-card__best-price airline-card__link">
+        <p class="amount">
+            <span class="currency">US$</span>
+            <span class="price">223</span>
+        </p>
+      </a>
+      <a href="" target="_blank" class="item_select item_button card-body__item-button airline-card__link">Select</a>
+    </div>
+  </div>
+
+</div><div class="wan-flight">
+
+  <div class="card-body">
+    <div class="airline_left airline-card__left">
+      <span class="airline_codes airline-card__code" data-code="DL">
+        <img alt="DL" src="http://0.omg.io/wego/image/upload/c_fit,w_80,h_27/flights/airlines_rectangular/DL.png">
+      </span>
+      <span class="airline_name airline-card__name">Delta Air Lines</span>
+    </div>
+
+    <div class="airline_right airline-card__right">
+      <span class="airline_fares_count airline-card__fares-count">see all <a href="#">141 fares</a></span>
+      <a href="" class="airline_best_price airline-card__best-price airline-card__link">
+        <p class="amount">
+            <span class="currency">US$</span>
+            <span class="price">228</span>
+        </p>
+      </a>
+      <a href="" target="_blank" class="item_select item_button card-body__item-button airline-card__link">Select</a>
+    </div>
+  </div>
+
+</div><div class="wan-flight">
+
+  <div class="card-body">
+    <div class="airline_left airline-card__left">
+      <span class="airline_codes airline-card__code" data-code="VX">
+        <img alt="VX" src="http://0.omg.io/wego/image/upload/c_fit,w_80,h_27/flights/airlines_rectangular/VX.png">
+      </span>
+      <span class="airline_name airline-card__name">Virgin America</span>
+    </div>
+
+    <div class="airline_right airline-card__right">
+      <span class="airline_fares_count airline-card__fares-count">see all <a href="#">36 fares</a></span>
+      <a href="" class="airline_best_price airline-card__best-price airline-card__link">
+        <p class="amount">
+            <span class="currency">US$</span>
+            <span class="price">231</span>
+        </p>
+      </a>
+      <a href="" target="_blank" class="item_select item_button card-body__item-button airline-card__link">Select</a>
+    </div>
+  </div>
+
+</div><div class="wan-flight">
+
+  <div class="card-body">
+    <div class="airline_left airline-card__left">
+      <span class="airline_codes airline-card__code" data-code="B6">
+        <img alt="B6" src="http://0.omg.io/wego/image/upload/c_fit,w_80,h_27/flights/airlines_rectangular/B6.png">
+      </span>
+      <span class="airline_name airline-card__name">JetBlue Airways</span>
+    </div>
+
+    <div class="airline_right airline-card__right">
+      <span class="airline_fares_count airline-card__fares-count">see all <a href="#">136 fares</a></span>
+      <a href="" class="airline_best_price airline-card__best-price airline-card__link">
+        <p class="amount">
+            <span class="currency">US$</span>
+            <span class="price">240</span>
+        </p>
+      </a>
+      <a href="" target="_blank" class="item_select item_button card-body__item-button airline-card__link">Select</a>
+    </div>
+  </div>
+
+</div><div class="wan-flight">
+
+  <div class="card-body">
+    <div class="airline_left airline-card__left">
+      <span class="airline_codes airline-card__code" data-code="F9">
+        <img alt="F9" src="http://0.omg.io/wego/image/upload/c_fit,w_80,h_27/flights/airlines_rectangular/F9.png">
+      </span>
+      <span class="airline_name airline-card__name">Frontier Airlines</span>
+    </div>
+
+    <div class="airline_right airline-card__right">
+      <span class="airline_fares_count airline-card__fares-count">see all <a href="#">88 fares</a></span>
+      <a href="" class="airline_best_price airline-card__best-price airline-card__link">
+        <p class="amount">
+            <span class="currency">US$</span>
+            <span class="price">246</span>
+        </p>
+      </a>
+      <a href="" target="_blank" class="item_select item_button card-body__item-button airline-card__link">Select</a>
+    </div>
+  </div>
+
+</div><div class="wan-flight">
+
+  <div class="card-body">
+    <div class="airline_left airline-card__left">
+      <span class="airline_codes airline-card__code" data-code="UA">
+        <img alt="UA" src="http://0.omg.io/wego/image/upload/c_fit,w_80,h_27/flights/airlines_rectangular/UA.png">
+      </span>
+      <span class="airline_name airline-card__name">United Airlines</span>
+    </div>
+
+    <div class="airline_right airline-card__right">
+      <span class="airline_fares_count airline-card__fares-count">see all <a href="#">563 fares</a></span>
+      <a href="" class="airline_best_price airline-card__best-price airline-card__link">
+        <p class="amount">
+            <span class="currency">US$</span>
+            <span class="price">250</span>
+        </p>
+      </a>
+      <a href="" target="_blank" class="item_select item_button card-body__item-button airline-card__link">Select</a>
+    </div>
+  </div>
+
+</div></div>
+<div id="results-list" class="cards" data-direct="Direct" data-via="Via"></div>
+
+<div id="pagination" class="pagination" data-prev="Prev" data-next="Next" style="display: none;"></div>
+
+    </div>
+  </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Footer theme customisation starts here! -->
+<!-- Bottom bar customisation starts here! -->
+  <footer class="footer">
+<!--     <div class="wan-wrap">
+    <p id="wan-copyright">Powered by VaporB2B/p>
+    </div> -->
+  </footer>
+<!-- Footer theme customisation ends here! -->
+<!-- Bottom bar customisation ends here! -->
+<div class="flights-info-bar">
+  <div class="price-info">
+    <i class="icon-info-sign"></i>Price/person, in <span class="js-currency-placeholder">USD</span> <em>(taxes and fees incl.)</em>
+  </div>
+
+  <div class="airline-fees">
+    <span class="airline-fees-long">Additional baggage & credit card fee may <a href="https://www.wego.com/airlines/fees" target="_blank">apply</a></span>
+    <span class="airline-fees-short">Additional fees may <a href="https://www.wego.com/airlines/fees" target="_blank">apply</a></span>
+  </div>
+</div>
+
+<script src="https://vtravel.superstore.travel/assets/responsive/javascripts/theme-0710a079bf687c54b631db6d35c61ece.js" type="text/javascript"></script>
+<script src="https://vtravel.superstore.travel/assets/generate/javascripts/customisations.js" type="text/javascript"></script>
+
+<!-- Start affiliate custom tracking -->
+<!-- End affiliate custom tracking -->
+
+</body>
+</html>

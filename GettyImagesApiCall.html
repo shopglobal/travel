@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Getty Images API</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- City search -->
+    <form class="navbar-form" id="nameStart">
+        <input class="form-control" id="cityInput" placeholder="City" type="text">
+        <button type="submit" id="searchButton" class="btn btn-default">Search</button>
+    </form>
+    <br><br>
+    <div id="output"></div>
+
+</div>
+   
+<script type="text/javascript">
+
+    var cityName = "";
+    var imageArray = [];
+
+    // on click function
+    $("#searchButton").on("click" , function(event) {
+        event.preventDefault();
+        // take value from input name
+        cityName = $("#cityInput").val().trim();
+        // Getty image apikey
+        var apiKey = 'd6e3snbs3ch2qvk8wctwnjmc';
+        // Getty image ajax call
+        $.ajax({
+            type:'GET',
+            url:"https://api.gettyimages.com/v3/search/images/creative?phrase=" + cityName,
+            beforeSend: function (request) {
+            request.setRequestHeader("Api-Key", apiKey);
+        }}).done(function(data) {
+
+            console.log("Ran ajax success");
+            // loop through the first 10 images on Getty images
+            for(var i = 0; i < 10; i++) {
+                // push 10 imges into array
+                imageArray.push(data.images[i].display_sizes[0].uri);
+            }
+
+            console.log(imageArray);
+            var i = 0;
+            // set loop for X seconds
+            var int = self.setInterval(changeImg, 1000 * 3);
+            // displays images in DOM and increments i
+            function changeImg() {
+                $("#output").html("<img src='" + data.images[i].display_sizes[0].uri + "'/>");
+                i++;
+            }
+        })
+    })
+  
+</script>
+
+</body>
+
+</html>

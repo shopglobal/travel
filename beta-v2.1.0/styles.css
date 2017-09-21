@@ -1,0 +1,394 @@
+/* --- Generic styles */ 
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+/*  border-bottom: 1px solid;*/
+
+}
+a:hover {
+  color: #000000; {
+    box-shadow: inset 0 -8px 0 $color-red;
+  }
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		    box-sizing: border-box;
+}
+
+body, html {
+	/*background-color: #f1f1f1;*/
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url("img/header.jpg");
+	background-size: cover;
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+/*	width: 100%;
+	height: 100%;*/
+	letter-spacing: 0.04em;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+	font-size: 6em;
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+p {
+
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+}
+
+
+
+.fadein {
+    opacity: 0;
+    -moz-transition: opacity 2s;
+    -webkit-transition: opacity 2s;
+    -o-transition: opacity 2s;
+    transition: opacity 2s;
+}
+
+.loaded {
+    opacity: 1;
+}
+
+/* --- Header */
+
+header.main {
+	position: relative;
+	width: 100%;
+	height: 100%;
+/*	background: url("img/header.jpg");
+	background-size: cover;*/
+}
+
+header.main h1, header.main p {
+	position: relative;
+	color: #fff;
+	text-align: center;
+	
+}
+
+header.main h1 {
+	/* vertical align starts - you can make the element vertically centred by changing translateY(-50%) */
+	position: relative;
+	z-index: 1000000;
+    top: 50%;
+    -webkit-transform: translateY(-70%);
+    -ms-transform: translateY(-70%);
+    transform: translateY(-70%);
+    /* vertical alignment ends */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    animation: slideDown 3s cubic-bezier(.4,.36,.35,.92);
+}
+
+header.main p {
+	top: 20%;
+	color: #000000;
+}
+
+@keyframes slideDown {
+	0% {transform: translateY(-500px); }
+	30% {transform: transalteY(0); }
+	60% {transform: translateY(-40px);}
+}
+
+@keyframes navSlideDown {
+	0% {transform: translateY(0);}
+	100% {transform: translateY(120px);}
+}
+
+
+@keyframes slideLeft {
+	0% {transform: translateX(500px);}
+	30% {transform: translateY(0);}
+}
+
+nav ul {
+	text-align: center;
+	z-index: 100;
+	position: absolute; 
+	left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto;
+	width: 100%;
+	top: -100px;
+	animation: navSlideDown 3s 0.5s ease forwards;
+}
+
+nav.main ul li {
+	display: inline-block;
+	margin: 0 20px;
+	transition-duration: 300ms;
+}
+
+nav.main {
+	color: #000000;
+	letter-spacing: 0.1em;
+
+}
+
+nav.main ul li:hover:not(.logo-globe) {
+	border-bottom: 2px solid #fff;
+	color: #fff;
+	transition: all 0.2s ease;
+}
+
+.logo-globe {
+	font-size: 50px;
+	color: #fff;
+}
+
+
+
+.btn { 
+	display: block;
+	border: 3px solid #fff;
+	position: absolute;
+    top: 60%;
+    right: 20%;
+    text-align: center;
+    color: #fff;
+    animation: slideLeft 3s cubic-bezier(.4,.36,.35,.92);
+    transition-duration: 1s;
+}
+
+.btn a {
+	display: block;
+	width: 200px;
+	height: 20px;
+	line-height: 0;
+    vertical-align: middle;
+    padding: 20px 10px;
+	font-size: 1.4em;
+}
+
+.btn:hover, .btn:active {
+	background: #fff;
+	color: #000000;
+}
+
+
+input[type="submit"].btn-submit {
+	webkit-appearance: none;
+    padding: 15px 20px;
+    color: #fff;
+    font-weight:bold;
+    border: solid #666 1px;
+    font-size: 14px;
+	display: block;
+	cursor: pointer;
+	margin-left: 20px;
+	margin-top: 20px;
+	border: 2px solid #000000;
+	background: #000000;
+	font-size: 1.2em;
+	transition: all 700ms linear;
+}
+
+input[type="submit"].btn-submit:hover {
+	transition-duration: 400ms;
+	border: 4px solid #000000;
+	background: #fff;
+	color: #000000;
+}
+
+.overlay {
+	position: absolute;
+	background: black;
+/*	top: 0; minified the positioning errors, so that it would act responsive.
+	right: 0;
+	bottom: 0;
+	left: 0;*/
+/*	margin: 0 auto;*/
+/*	clear: both;*/
+	height: 100% ;
+	width: 100%;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 70%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,05) 0%,rgba(0,0,0,0.1) 70%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.1) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000000000', endColorstr='#00000000000000',GradientType=0 ); /* IE6-9 */
+}
+
+.border {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	left: 10px;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+#about, #discover, #contact {
+	height: 70%;
+	background-position: 50% 40%;
+}
+
+
+#about {
+	background: url("img/forest.jpg");
+}
+
+
+#discover {
+	background: url("img/view.jpg");
+}
+
+#contact {
+	background: url("img/frb1.jpg");
+	background-position: 50% 50%;
+}
+
+.container {
+	background: #fff;
+	margin: 0 auto;
+	clear: both;
+	width: 95%;
+	padding: 30px;
+
+}
+
+/* Discover page */
+
+.discover-row {
+	width: 100%;
+	margin-bottom: 2px;
+
+}
+
+.col-flex {
+	flex-basis: 32.9%;
+}
+
+@media (min-width: 900px) {
+
+	.container {
+		width: 90%;
+		padding: 100px;
+	}
+
+	.discover-row {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.contact-wrapper {
+		display: flex;
+	}
+
+	.left, .right {
+		flex: 1;
+	}
+}
+
+/* Form and contact page */ 
+
+.contact-wrapper {
+	width: 100%;
+}
+
+.left, .right {
+	width: 100%;
+}
+
+
+iframe, object, embed {
+    max-width: 100%;
+}
+
+
+form {
+	margin-top: 40px;
+	margin-left: 20px;
+	margin-bottom: 70px;
+}
+
+form span {
+	font-size: 2em;
+	vertical-align: top;
+	color: rgba(0,0, 0, 0.4);
+}
+
+input, textarea {
+	padding: 10px;
+	padding: 10px;
+	font-size: 1.1em;
+}
+
+input {
+	margin-bottom: 20px;
+}
+
+textarea {
+	width: 80%;
+	border:1px solid rgba(0, 0, 0, 0.2);
+	height: 200px;
+}
+
+/*
+.left, .right {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+}*/
+
+
+
+aside.quote {
+	padding: 30px;
+	font-size: 35px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	color: #BBB;
+	letter-spacing: 0.05em;
+}
+
+/* Footer bottom */
+
+footer.bottom {
+	width: 100%;
+	line-height: 100px;
+	vertical-align: middle;
+	background: #000000;
+	color: #fff;
+	padding: 20px;
+}
+
+footer.bottom p span {
+	border-bottom: 1px solid #fff;
+}
+
