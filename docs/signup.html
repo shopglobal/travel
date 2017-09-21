@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travel Smart</title>
+    <!--Link to reset css template -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!--====== BOOTSTRAP ===== -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <!--====== FONTS ===== -->
+    <!--Import Google Icon Font-->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+    <!-- Font Awesome link which enable fonts and icons.  -->
+    <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
+    <!--====== YOUR STYLE SHEET ===== -->
+    <!-- Your style sheet link -->    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">    
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+</head>
+<body>
+       <!--====== HTML CONTENT ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">Travel Smart</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="signup.html">Sign Up</a>
+      </li>
+    </ul>
+    </div>
+    </nav>
+    <br>
+    <br>
+        <!-- Start of content wrap -->
+        <!-- Start of Sign Up Area -->
+    <div class="wrap">
+      <div class="container">
+        <section class="row">
+          <div class="col-md-8 up-wrap">
+            <form class="sign-up-form">
+              <h1 class="sign-up-header">Sign Up</h1>
+              <hr class="sign-up-hr"/>
+              <div class="form-group">
+                <label class="label-name" for="name">First Name</label>
+                <input type="text" id="name_input" name="user_name" />
+              </div>
+              <div class="form-group">
+                <label class="label-name" for="name">Last Name</label>
+                <input type="text" id="name_input" name="user_name" />
+              </div>
+              <div class="form-group">
+                <label class="label-name" for="name">User Name</label>
+                <input type="text" id="name_input" name="user_name" />
+              </div>
+              <div class="form-group">
+                <label class="label-mail" for="mail">E-mail     </label>
+                <input type="email" id="mail_input" name="user_mail" />
+              </div>
+              <div class="form-group">
+                <label class="label-name" for="name">Password</label>
+                <input type="text" id="password_input" name="user_password" />
+              </div>                          
+              <button class="submit-btn">Submit</button>
+            </form>            
+          </div>
+          <div class="col-md-4 in-wrap">
+          <!-- End of Sign Up Area -->
+
+            <!-- Start of Sign In Area -->
+            <section id="sign-in-area">
+              <div class="sign-in-content">
+              <form class="sign-in-form">
+                <h1 class="sign-in-header">Sign in</h1>
+                <hr class="sign-in-hr"/>
+                <div>
+                <div class="form-group">
+                  <label class="label-name" for="name">User Name</label>
+                  <input type="text" id="username_input" name="user_name" />
+                </div>
+                <div class="form-group">
+                  <label class="label-mail" for="mail">Password</label>
+                  <input type="password" id="password_input" name="user_password" />
+                </div>
+                <button class="submit-btn">Sign In</button>
+                </form>
+                  <!-- still needs image -->
+                  <img src="assets/imgs/google.png" alt="" class="connect-with-me-photo">
+                </div>
+              </div>
+            </section>
+
+            <!-- End of Sign In Area -->
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- End of content wrap -->
+    
+    <!--====== BOOTSTRAP ===== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--====== UNDERSCORE===== -->
+    <!-- underscore JS library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <!-- ===== FIREBASE ====== -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <!--====== YOUR LOCAL JS FILE ===== -->
+    <!-- link to user JS file. Name will change -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+</body>
+
+</html>
