@@ -9,6 +9,8 @@
     <!--Link to reset css template -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!--====== BOOTSTRAP ===== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -25,6 +27,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!--Datatables CSS - Mark -->
     <link rel="stylesheet" href="assets/css/datatables.css">
+
+    <link rel="stylesheet" href="assets/css/jquery.modal.css" type="text/css" media="screen" />
 </head>
 <body>
      <!--====== HTML CONTENT ===== -->
@@ -67,6 +71,7 @@
             </div>
         </div>
     </div>
+    
     <!-- display search related images here -->
     <div class="container-fluid">
             <div class="row">
@@ -126,22 +131,46 @@
                     <!-- Place holder for Things to Do -->
                     <!-- added a header for the things-to-do title - wenfang-->
                     <div class="panel-body cityToDo"><h2></h2></div>
+                   <!--  <div class="panel-body citySort"></div> -->
                     <hr>
                     <!-- Place holder for Flight info -->
-                    <!-- <div class="panel-body cityFlight">Flight Info</div> -->
-                    <!--  <div class="panel-body cityFlight"><h2></h2></div>  a header for flight info - wenfang--> 
+                     <!-- Place holder for Flight info -->
+                    <div class="panel-body cityFlight">Flight Info
+                    <table class="table tablesorter">  
+                        <thead class="thead">
+                        <tr>
+                        <th class="thead tablesorter">Origin</th>
+                        <th class="thead tablesorter">Destination</th>
+                        <th class="thead tablesorter">Departure</th>
+                        <th class="thead tablesorter">Return</th>
+                        <th class="thead tablesorter">Price</th>
+                        </tr>
+                        </thead>
+                    <tbody >
+                        <tr class="tr" id="results">
+                        <td class="td"><span id="origins" class="tablesorter"></span></td>
+                        <td class="td"><span id="destinations" class="origin tablesorter" value="0"></span></td>
+                        <td class="td"><span id="departure_date" class="tablesorter"></span></td>
+                        <td class="td" id="td"><span id="return_date" class="tablesorter"></span></td>
+                        <td class="td" id="td"><span id="price" class="tablesorter"></span></td>
+
+
+                        </tr>
+                    </tbody>
+                    </table>
+                    </div>
                 </div>
             </div>
         </div> 
-    <!--====== BOOTSTRAP ===== -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-    </script>
+    </div>
+            
 
     <!-- DatatablesJS | Mark -->
     <script src="assets/javascript/datatables.js"></script>
     <!-- MomenJS CDN | Mark-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+
+    <script src="assets/javascript/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
     <!-- Amadeus API JS -->
  <!--    <script src="assets/javascript/amadeus.js"></script> -->
 
