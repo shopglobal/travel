@@ -19,20 +19,6 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
     <!-- Font Awesome link which enable fonts and icons.  -->
     <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
-    <!-- JS Resources needed in Header -->
-        <!--====== BOOTSTRAP ===== -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-    </script>
- 
-    <!-- Added Jquery UI Libraries wenfang -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <!-- JS Libraries | Mark  -->
-    <!-- DatatablesJS | Mark -->
-    <script src="assets/javascript/datatables.js"></script>
-    <!-- MomenJS CDN | Mark-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
    
     <!--====== YOUR STYLE SHEET ===== -->
     <!-- Your style sheet link -->    
@@ -69,8 +55,8 @@
                 <div class="brand">
                     <h1>Plan Your Trip <i class="fa fa-paper-plane"></i></h1>
                 </div>
-   <form class="form book-now-form" role="form" id="widget_booking_form" name="widget_booking_form" >
-            <input id="campaign" type="hidden" value="visitflagler_topNavWidget" name="campaign"> <input id="clone_id" type="hidden" value="278" name="clone_id">
+<!--    <form class="form book-now-form" role="form" id="widget_booking_form" name="widget_booking_form" >
+            <input id="campaign" type="hidden" value="visitflagler_topNavWidget" name="campaign"> <input id="clone_id" type="hidden" value="278" name="clone_id"> -->
             <div class="form-group">
                <label for="lodging">Book Your Stay</label> 
                <select class="form-control" id="lodgingID" name="lodgingID" placeholder="All Lodging">
@@ -123,7 +109,7 @@
             <div class="buttons">
                <button name="Submit" class="submit btn btn-sm">Let's Go!</button>
             </div>
-         </form>
+<!--          </form> -->
             </div>
          </div>
       </div>
@@ -135,7 +121,52 @@
                     <div class="panel-heading text-center">
                         <div class="panel-title"></div>
                     </div>
-                    
+                                        <div class="panel-body cityImage">  <!-- I changed this div because I wanted to add a go-back button  wenfang -->
+                        <img src="">
+                    </div>
+                    <!-- Place holder for About City -->
+                    <!-- <div class="panel-body cityAbout">About City</div> -->
+                    <div class="panel-body popularSrches">   <!-- added a div for popular searches  wenfang -->
+                        <h2>Popular Destinations</h2>
+                        <hr>
+                    </div>
+               
+                    <!-- Place holder for the City weather data-->
+                    <div class="panel-body cityWeather">
+                        <div id="localTimeWeather">
+                        </div>
+                        <br>
+                        <table class="table table-hover" id='weather-table'>
+                           <thead>
+                              <tr>
+                                <th>Month</th>
+                                <th>Jan</th>
+                                <th>Feb</th>
+                                <th>Mar</th>
+                                <th>Apr</th>
+                                <th>May</th>
+                                <th>Jun</th>
+                                <th>Jul</th>
+                                <th>Aug</th>
+                                <th>Sep</th>
+                                <th>Oct</th>
+                                <th>Nov</th>
+                                <th>Dec</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                             <!--  <tr>
+                                <td>Avg. Min. Temp (F)</td>
+                              </tr>
+                              <tr>
+                                <td>Abs. Max. Temp (F)</td>
+                              </tr>
+                              <tr>
+                                <td>Avg. Daily Rainfall (in)</td>
+                              </tr> -->
+                           </tbody>
+                        </table>
+                    </div>
                     <hr>
                       <!-- a header for flight info - wenfang-->
                       <!-- Place holder for Flight info -->
@@ -171,17 +202,34 @@
 
 
 
+<!--====== BOOTSTRAP ===== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+
+    <!-- DatatablesJS | Mark -->
+    <script src="assets/javascript/datatables.js"></script>
+    <!-- MomenJS CDN | Mark-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+
     <!--====== UNDERSCORE===== -->
     <!-- underscore JS library CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <!-- Added Jquery UI Libraries wenfang -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
+    <!-- ===== FIREBASE ====== -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <!--====== YOUR LOCAL JS FILE ===== -->
     <!-- link to user JS file. Name will change -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
-    <!-- <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script> -->
-
+        <!-- Amadeus API JS -->
     <script src="assets/javascript/amadeus.js"></script>
+
 </body>
+
 </html>

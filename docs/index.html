@@ -19,15 +19,60 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
     <!-- Font Awesome link which enable fonts and icons.  -->
     <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
+    <!-- JS Resources needed in Header -->
+        <!--====== BOOTSTRAP ===== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+ 
+    <!-- Added Jquery UI Libraries wenfang -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- JS Libraries | Mark  -->
+    <!-- DatatablesJS | Mark -->
+    <script src="assets/javascript/datatables.js"></script>
+    <!-- MomenJS CDN | Mark-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+   
     <!--====== YOUR STYLE SHEET ===== -->
     <!-- Your style sheet link -->    
-    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">  -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
     <!--Datatables CSS - Mark -->
-    <link rel="stylesheet" href="assets/css/datatables.css">
+    <link rel="stylesheet" href="assets/css/datatables.css"> <!-- ??? -->
+
 </head>
 <body>
-     <!--====== HTML CONTENT ===== -->
+    <!-- Starting Modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center">Sign In</h4>
+                </div>
+                <div class="modal-body">
+                <div class="form-group">
+                  <label class="userName" for="name">User Name</label>
+                  <input type="text" id="username_input" name="user_name" />
+                </div>
+                <div class="form-group">
+                  <label class="password" for="mail">Password</label>
+                  <input type="password" id="password_input" name="user_password" />
+                </div>
+                <button class="submit-btn">Sign In</button>
+                <!-- </form> ???-->
+                  <!-- still needs image -->
+                  <img src="assets/imgs/fb.png" alt="" class="connect-fb-photo">
+                </div>
+              <!-- </div> ???-->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+       <!--====== HTML CONTENT ===== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand">Travel Smart</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -36,7 +81,7 @@
         <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="beta.html">Plan</a>
+        <a class="nav-link" href="trending.html">Trending</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about.html">About</a>
@@ -48,6 +93,7 @@
     </div>
     </nav>
     
+      
     <!-- Search Bar -->
     <div class="wrap wrap-search">  
         <div class="box">
