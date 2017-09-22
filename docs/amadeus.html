@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <!--Datatables CSS - Mark -->
+    <link rel="stylesheet" href="assets/css/datatables.css">
+      <!--Styles CSS - Mark -->
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+     <!--Styles CSS - Mark -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+    <!-- Font Awesome link which enable fonts and icons.  -->
+    <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
+    <!-- JS Resources needed in Header -->
+        <!--====== BOOTSTRAP ===== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+ 
+    <!-- Added Jquery UI Libraries wenfang -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- JS Libraries | Mark  -->
+    <!-- DatatablesJS | Mark -->
+<!--     <script src="assets/javascript/datatables.js"></script> -->
+    <!-- MomenJS CDN | Mark-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- MomenJS CDN | Mark-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+    </script>
+    <!-- Amadeus API JS -->
+<!--     <script src="assets/javascript/amadeus.js"></script> -->
+  <title>Multiple AJAX</title>
+</head>
+
+<body>
+<style>
+
+</style>
+
+<style>
+
+</style>
+
+<div class="container">
+
+ <h1>Travel Site with API data</h1>
+  <hr>
+
+  <!-- Here we create a generic div for our Trip Data from Amadeus API -->
+
+<!-- <div id="baseDiv"></div> -->
+    <h2>Travel Table</h2>
+    <p>Much text, many stylings to improve functionality.</p>
+    <table class="table tablesorter">  
+      <thead class="thead">
+        <tr>
+          <th class="thead tablesorter">Origin</th>
+          <th class="thead tablesorter">Destination</th>
+          <th class="thead tablesorter">Departure</th>
+          <th class="thead tablesorter">Return</th>
+          <th class="thead tablesorter">Price</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr class="tr" id="results">
+          <!-- Example Movie 1 -->
+          <td class="td"><span id="origin" class="tablesorter"></span></td>
+          <td class="td"><span id="destination" class="origin tablesorter" value="0"></span></td>
+          <td class="td"><span id="departure_date" class="tablesorter"></span></td>
+          <td class="td" id="td"><span id="return_date" class="tablesorter"></span></td>
+          <td class="td" id="td"><span id="price" class="tablesorter"></span></td>
+
+
+            </tr>
+      </tbody>
+    </table>
+  </div>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<div align="center" class="ui-widget">
+<label for="city">Your city: </label>
+<input id="city">
+<!-- // space --> 
+<br>
+<!-- Powered by <a href="https://sandbox.amadeus.com">Amadeus Travel Innovation Sandbox</a> -->
+</div>
+<div align="center" class="ui-widget" style="margin-top:2em; font-family:Arial">
+Result:
+<div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
+</div>
+</body>
+
+
+
+    <script src="assets/javascript/amadeus_a.js"></script>
+    <script src="assets/javascript/amadeus_b.js"></script>
+<!-- <script type="text/javascript"></script> -->
+ 
+ 
+    
+</html>

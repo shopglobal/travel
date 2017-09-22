@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travel Smart</title>
+    <!--Link to reset css template -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!--====== BOOTSTRAP ===== -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <!--====== FONTS ===== -->
+    <!--Import Google Icon Font-->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+    <!-- Font Awesome link which enable fonts and icons.  -->
+    <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
+    <!-- JS Resources needed in Header -->
+        <!--====== BOOTSTRAP ===== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+ 
+    <!-- Added Jquery UI Libraries wenfang -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    </script>
+    <!--====== YOUR STYLE SHEET ===== -->
+    <!-- Your style sheet link -->    
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+</head>
+
+    <!--====== HTML CONTENT ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">Travel Smart</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="beta.html">Plan</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="signup.html">Sign Up</a>
+      </li>
+    </ul>    
+    </div>
+    </nav>
+
+
+<div class="wrap wrap-search">  
+<div class="box">
+            <div class="login">
+                <div class="brand">
+                    <h1>Plan Your Trip <i class="fa fa-paper-plane"></i></h1>
+                </div>
+   <form class="form book-now-form" role="form" id="widget_booking_form" name="widget_booking_form" >
+            <input id="campaign" type="hidden" value="visitflagler_topNavWidget" name="campaign"> <input id="clone_id" type="hidden" value="278" name="clone_id">
+            <div class="form-group">
+               <label for="lodging">Book Your Stay</label> 
+               <select class="form-control" id="lodgingID" name="lodgingID" placeholder="All Lodging">
+                  <option value="103" selected="selected">
+                     All Options
+                  </option>
+                  <option id="flights" value="50">
+                     Flights
+                  </option>
+                  <option value="9">
+                     Hotels
+                  </option>
+                  <option value="21">
+                     Cars
+                  </option>
+                  <option value="5">
+                     Train
+                  </option>
+<!--                   <option value="7">
+                     Other Vacation or Travel ToDo
+                  </option> -->
+                  <!-- <option value="7">
+                     Bundle Deals ToDo coming soon 
+                  </option> -->
+               </select>
+            </div>
+
+                <div class="inputs">
+                <!--check in element-->
+            <div class="form-group">
+               <label for="check-in">Check In</label> <!-- <input type="textfield" class="form-control" id="check-in" placeholder="12.20.2014"> -->
+               <input type="text"  class="form-control" id="start-date" name="checkIn" placeholder="yyyy/mm/dd">
+            </div>
+            <!--check out element-->
+            <div class="form-group">
+               <label for="check-out">Check Out</label> <!-- <input type="textfield" class="form-control" id="check-out" placeholder="12.27.2014"> -->
+               <input type="text" class="form-control" id="end-date" name="checkOut" placeholder="yyyy/mm/dd" >
+            </div>
+            <div class="form-group flights">
+               <label for="origin">Point of Origin: </label> 
+               <input id="origin" type="text" class="input whereOrigin origin autocomplete">
+            </div>
+            <div class="form-group flights">
+               <label for="destination">Where are you going? </label> 
+               <input id="destination" type="text" class="input where destination autocomplete">
+            </div>
+            
+               </div>
+            <!--submit-->
+            <div class="buttons form-group">
+               <button name="Submit" class="submit btn btn-sm">Let's Go!</button>
+            </div>
+         </form>
+            </div>
+         </div>
+      </div>
+ <!-- display search related images here -->
+    <div class="container-fluid">
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-center">
+                        <div class="panel-title"></div>
+                    </div>
+                    
+                    <hr>
+                    <!-- Place holder for Flight info -->
+                    <!-- <div class="panel-body cityFlight">Flight Info</div> -->
+                    <div class="panel-body cityFlight"><h2></h2></div>
+                      <!-- a header for flight info - wenfang-->
+                      <!-- Place holder for Flight info -->
+                    <div class="panel-body cityFlight">Flight Info</div>
+                    <table class="table tablesorter">  
+        <thead class="thead">
+        <tr>
+          <th class="thead tablesorter">Origin</th>
+          <th class="thead tablesorter">Destination</th>
+          <th class="thead tablesorter">Departure</th>
+          <th class="thead tablesorter">Return</th>
+          <th class="thead tablesorter">Price</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr class="tr" id="results">
+          <!-- Example Movie 1 -->
+          <td class="td"><span id="origins" class="tablesorter"></span></td>
+          <td class="td"><span id="destinations" class="origin tablesorter" value="0"></span></td>
+          <td class="td"><span id="departure_date" class="tablesorter"></span></td>
+          <td class="td" id="td"><span id="return_date" class="tablesorter"></span></td>
+          <td class="td" id="td"><span id="price" class="tablesorter"></span></td>
+
+
+            </tr>
+      </tbody>
+    </table>
+                </div>
+            </div>
+        </div> 
+
+<script src="assets/javascript/amadeus.js"></script>
+    <!--====== UNDERSCORE===== -->
+    <!-- underscore JS library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <!-- JS Libraries | Mark  -->
+    <!-- DatatablesJS | Mark -->
+    <script src="assets/javascript/datatables.js"></script>
+    <!-- MomenJS CDN | Mark-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+   <!-- DatesJS -
+    <script src="assets/javascript/datesJS.js"> 
+    // Mark added this code to pickup the dates of checkIn and checkOut -->
+
+    <!--====== YOUR LOCAL JS FILE ===== -->
+    <!-- link to user JS file. Name will change -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+    <!-- <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script> -->
+
+    
+</body>
+</html>

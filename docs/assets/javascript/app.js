@@ -34,7 +34,8 @@ database.ref("Posts").on("child_added", function(snap) {
 }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
-
+$(".cityFlight").hide();
+// $(".form-group").hide();
 $(".container-fluid").hide(); // Mark addded conatiner-fluid hide to stop text runnoff
  
 $(".where").autocomplete({
@@ -58,6 +59,10 @@ var srchResPage = false; //a flag for checking if current 'page' is search page 
         var arr = cityInput.split(",");
         cityName = arr[0];
         console.log("cityName var is: " + cityName);
+
+        // inspiration search using origin based on IP address 
+        // var date = moment().add(1, 'days').format('YYYY-MM-DD'); 
+
 
         // hides the search box
         $(".wrap").hide();
@@ -90,7 +95,9 @@ var srchResPage = false; //a flag for checking if current 'page' is search page 
             //a back-to-search button added
             var backBtn = $("<button class='submit backbutton'>").text("Back to Search");
             $(".cityImage").append(backBtn);
-
+              //a back-to-search button added
+            var flightsBtn = $("<button id='flightsModal' class='submit flightsModal'>").text("Search Flights");
+            $(backBtn).before(flightsBtn);
             // displays images in DOM and increments i
             function changeImg() {
                 // $(".cityImage").html("<img src='" + data.images[i].display_sizes[0].uri + "'/>");
@@ -101,7 +108,8 @@ var srchResPage = false; //a flag for checking if current 'page' is search page 
                     i=0;
             }
         });
-
+        $( ".submit" ).wrap( "<div class='buttons'></div>" );
+        // $(".form-group").wrap("<div class='wrap-search'> ");
         // World Weather Online apikey
         $(".cityWeather").show();
         $("#localTimeWeather").empty();
@@ -174,6 +182,14 @@ var srchResPage = false; //a flag for checking if current 'page' is search page 
     //we need a button to go back to search
     $(".cityImage").on("click", ".backbutton", function () {
         location.reload();
+    })
+    //  $("#flightsModal").on("click", ".flights", function () {
+    //     load( "beta.html" );
+    // })
+    $(".cityImage").on("click", ".flightsModal", function() {
+        $(".cityToDo").hide();
+        // $(".form-group").show();
+        $(".cityFlight").show(); // Mark added container-fluid show rule on submit
     })
 
     //fetch most-searched places to the front page
