@@ -13,381 +13,415 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Firebase Reference -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <!--====== FONTS ===== -->
     <!--Import Google Icon Font-->
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
     <!-- Font Awesome link which enable fonts and icons.  -->
     <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
-        <!--====== BOOTSTRAP ===== -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-    </script>
-
-    <!-- Added Jquery UI Libraries wenfang -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <!-- JS Libraries | Mark  -->
-    <!-- DatatablesJS | Mark -->
-    <script src="assets/javascript/datatables.js"></script>
-    <!-- MomenJS CDN | Mark-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+   
     <!--====== YOUR STYLE SHEET ===== -->
     <!-- Your style sheet link -->    
     <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">  -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <style>
-/*    @import url('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');*/
-
-.date-form { margin: 10px; }
-label.control-label span { cursor: pointer; }
-thead {
-    color: white;
-}
-td {
-    color: white;
-}
-</style>
+    <link href="https://www.amadeus.net/styles.d51be27c223e700b7299.bundle.css" rel="stylesheet"/></head>
 </head>
-<body>
-       <!--====== HTML CONTENT ===== -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">Travel Smart</a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="trending.html">Trending</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="signup.html">Sign Up</a>
-      </li>
-    </ul>    
-    </div>
-    </nav>
-    
-        <!-- Search Bar -->
-    <div class="wrap wrap-search">  
-        <div class="box">
-            <div class="login">
-                <div class="brand">
-                    <h1>Here We Go!<i class="fa fa-paper-plane"></i></h1>
-                </div>
-                <div class="inputs">
-                    <p>Point of Origin: </p>
-                    <input id="origin" type="text" class="input autocomplete">
-                    <p>Where are you going? </p>
-                    <input id="where" type="text" class="input">
-                    <p>When would you like to get there?: </p>
-                    <input id="departureDate" type="text" class="input datepicker form-control" />
-                </div>
-                <div class="buttons">
-                    <button class="submit">Let's Go!</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- display search related images here -->
-    <div class="container-fluid">
-            <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="panel panel-primary">
-                    <div class="panel-heading text-center">
-                        <div class="panel-title"></div>
-                    </div>
-                    <div class="panel-body cityImage"></div>
-                    <!-- Place holder for About City -->
-                    <div class="panel-body cityAbout">About City</div>
-                    <hr>
-                    <!-- Place holder for Things to Do -->
-                    <!-- added a header for the things-to-do title - wenfang-->
-                    <div class="panel-body cityToDo"><h2></h2></div>
-                    <hr>
-                    <!-- Place holder for Flight info -->
-                    <div class="panel-body cityFlight">Flight Info</div>
-                    <table class="table tablesorter">  
-      <thead class="thead">
-        <tr>
-          <th class="thead tablesorter">Origin</th>
-          <th class="thead tablesorter">Destination</th>
-          <th class="thead tablesorter">Departure</th>
-          <th class="thead tablesorter">Return</th>
-          <th class="thead tablesorter">Price</th>
-        </tr>
-      </thead>
-      <tbody >
-        <tr class="tr" id="results">
-          <!-- Results imported jQuery == Mark  -->
-          <td class="td"><span id="origin" class="tablesorter"></span></td>
-          <td class="td"><span id="destination" class="tablesorter" value="0"></span></td>
-          <td class="td"><span id="departure_date" class="tablesorter"></span></td>
-          <td class="td" id="td"><span id="return_date" class="tablesorter"></span></td>
-          <td class="td" id="td"><span id="price" class="tablesorter"></span></td>
-        </tr>
-      </tbody>
-    </table>
-                </div>
-            </div>
-        </div> 
 
-    
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<div _ngcontent-c4="" class="triptools-panel-container">
+        <router-outlet _ngcontent-c4=""></router-outlet><app-timetables _nghost-c5=""><div _ngcontent-c5="" id="triptool-timetables">
+  <div _ngcontent-c5="" class="triptools-panel-content timetables">
+    <div _ngcontent-c5="" class="triptools-panel-header-container">
+      <h2 _ngcontent-c5="" class="triptools-panel-header">
+        Timetables
+      </h2>
+      <h4 _ngcontent-c5="" class="triptools-panel-sub-header">
+        Here you can quickly check the schedules of all the flights for a particular journey.
+      </h4>
+    </div>
+    <div _ngcontent-c5="" class="triptool-container">
+      <div _ngcontent-c5="" class="triptool">
+        <div _ngcontent-c5="" class="triptool-content group">
+          <div _ngcontent-c5="" class="triptool-side-content">
+            <form _ngcontent-c5="" class="amadeus-form ng-untouched ng-dirty ng-valid" novalidate="">
+              <div _ngcontent-c5="" id="searchForm">
+                <div _ngcontent-c5="" class="search-flyout-flight-panel">
+                  <table _ngcontent-c5="">
+                    <tbody _ngcontent-c5=""><tr _ngcontent-c5="">
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item from-location">
+                          <div _ngcontent-c5="" class="form-help">
+                            Origin:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            <app-autocomplete _ngcontent-c5="" autocompletetype="airport" formcontrolname="origin" placeholder="City, airport or IATA" _nghost-c3="" class="ng-untouched ng-dirty ng-valid"><div class="ngui-auto-complete-wrapper" style="position: relative;"><input _ngcontent-c3="" autocomplete="off" min-chars="3" ngui-auto-complete="" type="text" class="anet-autocomplete ng-valid ng-dirty ng-touched" id="origin" tabindex="0" placeholder="City, airport or IATA"></div>
+</app-autocomplete>
+                          </div>
+                        </div>
+                      </td>
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item to-location">
+                          <div _ngcontent-c5="" class="form-help">
+                            Destination:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            <app-autocomplete _ngcontent-c5="" autocompletetype="airport" formcontrolname="destination" placeholder="City, airport or IATA" _nghost-c3="" class="ng-untouched ng-dirty ng-valid"><div class="ngui-auto-complete-wrapper" style="position: relative;"><input _ngcontent-c3="" autocomplete="off" min-chars="3" ngui-auto-complete="" type="text" class="where anet-autocomplete ng-valid ng-dirty ng-touched" id="destination" tabindex="0" placeholder="City, airport or IATA"></div>
+</app-autocomplete>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item from-date date-input-item">
+                          <div _ngcontent-c5="" class="form-help">
+                            Departure Date:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            
+                            <p-calendar _ngcontent-c5="" dateformat="D dd M yy" formcontrolname="departureDate" placeholder="Departure" class="ng-tns-c6-0 ui-inputwrapper-filled ng-untouched ng-pristine ng-valid">
+        <span class="ng-tns-c6-0 ui-calendar">
+            <!---->
+                <input type="text" class="form-control ng-tns-c6-0 ui-inputtext ui-widget ui-state-default ui-corner-all" id="start-date" placeholder="Departure"><!---->
+            
+            <div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-shadow ng-trigger ng-trigger-overlayState" style="display: none; opacity: 0;">
+
+                <!---->
+                <!---->
+                <!---->
+                
+            </div>
+        </span>
+    </p-calendar>
+                          </div>
+                        </div>
+
+                      </td>
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item">
+                          <div _ngcontent-c5="" class="form-help">
+                            Departure Time:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            <select _ngcontent-c5="" class="amadeus-form-item small option-input ng-untouched ng-pristine ng-valid" formcontrolname="departureTime" id="departure-time" placeholder="Departure Time">
+                          <!----><option _ngcontent-c5="" value="0">Any</option><option _ngcontent-c5="" value="1">0 AM to 4 AM</option><option _ngcontent-c5="" value="2">4 AM to 8 AM</option><option _ngcontent-c5="" value="3">8 AM to 12 PM</option><option _ngcontent-c5="" value="4">12 PM to 4 PM</option><option _ngcontent-c5="" value="5">4 PM to 8 PM</option><option _ngcontent-c5="" value="6">8 PM to 0 AM</option>
+                        </select>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="" colspan="2">
+                        <div _ngcontent-c5="" class="input-container option-input-item departure-day-input-item">
+                          <!----><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Any day of the week" class="ng-untouched ng-pristine ng-valid">
+                        Any
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Monday" class="ng-untouched ng-pristine ng-valid">
+                        MO
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Tuesday" class="ng-untouched ng-pristine ng-valid">
+                        TU
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Wednesday" class="ng-untouched ng-pristine ng-valid">
+                        WE
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Thursday" class="ng-untouched ng-pristine ng-valid">
+                        TH
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Friday" class="ng-untouched ng-pristine ng-valid">
+                        FR
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Saturday" class="ng-untouched ng-pristine ng-valid">
+                        SA
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Sunday" class="ng-untouched ng-pristine ng-valid">
+                        SU
+                        </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item to-date date-input-item">
+                          <div _ngcontent-c5="" class="form-help">
+                            Return Date:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            
+                            <p-calendar _ngcontent-c5="" dateformat="D dd M yy" formcontrolname="returnDate" placeholder="Return" class="ng-tns-c6-1 ng-untouched ng-pristine ng-valid">
+        <span class="ng-tns-c6-1 ui-calendar">
+            <!---->
+                <input type="text" class="form-control ng-tns-c6-1 ui-inputtext ui-widget ui-state-default ui-corner-all" id="end-date" placeholder="Return"><!---->
+            
+            <div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-shadow ng-trigger ng-trigger-overlayState" style="display: none; opacity: 0;">
+
+                <!---->
+                <!---->
+                <!---->
+                
+            </div>
+        </span>
+    </p-calendar>
+                          </div>
+                        </div>
+
+                      </td>
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item">
+                          <div _ngcontent-c5="" class="form-help">
+                            Return Time:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            <select _ngcontent-c5="" class="amadeus-form-item small option-input ng-untouched ng-pristine ng-valid" formcontrolname="returnTime" id="return-time" placeholder="Return Time">
+                          <!----><option _ngcontent-c5="" value="0">Any</option><option _ngcontent-c5="" value="1">0 AM to 4 AM</option><option _ngcontent-c5="" value="2">4 AM to 8 AM</option><option _ngcontent-c5="" value="3">8 AM to 12 PM</option><option _ngcontent-c5="" value="4">12 PM to 4 PM</option><option _ngcontent-c5="" value="5">4 PM to 8 PM</option><option _ngcontent-c5="" value="6">8 PM to 0 AM</option>
+                        </select>
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="" colspan="2">
+                        <div _ngcontent-c5="" class="input-container option-input-item return-day-input-item">
+                          <!----><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Any day of the week" class="ng-untouched ng-pristine ng-valid">Any
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Monday" class="ng-untouched ng-pristine ng-valid">MO
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Tuesday" class="ng-untouched ng-pristine ng-valid">TU
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Wednesday" class="ng-untouched ng-pristine ng-valid">WE
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Thursday" class="ng-untouched ng-pristine ng-valid">TH
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Friday" class="ng-untouched ng-pristine ng-valid">FR
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Saturday" class="ng-untouched ng-pristine ng-valid">SA
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Sunday" class="ng-untouched ng-pristine ng-valid">SU
+                      </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="" colspan="2">
+                        <div _ngcontent-c5="" class="input-container option-input-item airlines-input-item">
+                          <div _ngcontent-c5="" class="form-help">
+                            Airlines:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            <input _ngcontent-c5="" class="mat-input-element ng-untouched ng-pristine ng-valid" formcontrolname="airlines" id="airlines-input" mdinput="" placeholder="IATA codes separated by comma (e.g. AF, IB, LH, etc)" style="width: 330px" type="text" aria-invalid="false">
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item nonstop-input-item">
+                          <input _ngcontent-c5="" formcontrolname="nonstop" id="nonstop-input" type="checkbox" class="ng-untouched ng-pristine ng-valid">Non-Stop only
+                        </div>
+                      </td>
+                      <td _ngcontent-c5=""></td>
+                    </tr>
+                  </tbody></table>
+                </div>
+              </div>
+              <input _ngcontent-c5="" class="submit button pink medium submit-button" id="submit-button" type="submit" value="Search timetables">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+    <!----><ul _ngcontent-c5="" class="tabs search-results-nav-tabs group nav nav-tabs" id="tabs">
+      <li _ngcontent-c5="" class="tab flights shadow-included active">
+        <a _ngcontent-c5="" class="tab-link" id="aResultsOutbound">
+        Outbound
+      </a>
+      </li>
+      <!---->
+    </ul>
+    <!----><div _ngcontent-c5="" class="tab-content" id="results">
+      <div _ngcontent-c5="" class="tab-pane">
+        <div _ngcontent-c5="" class="tools">
+          <div _ngcontent-c5="" class="filters">
+            <app-smart-filters _ngcontent-c5="" _nghost-c7=""><div _ngcontent-c7="" class="smart-filters-content">
+  
+  <!----><div _ngcontent-c7="" class="dropdown">
+    <button _ngcontent-c7="" class="smart-filter-toggle">Stops</button>
+    <div _ngcontent-c7="" class="filter-container" style="display: none;">
+      <!----><app-stops-filter _nghost-c11=""><div _ngcontent-c11="" class="dropdown dropdown-menu">
+  <!---->
+  <!----><div _ngcontent-c11="">
+    <ul _ngcontent-c11="">
+      <!----><li _ngcontent-c11="" class="legs-checkbox">
+        <input _ngcontent-c11="" type="checkbox" class="ng-untouched ng-pristine ng-valid">
+        <label _ngcontent-c11="">direct</label>
+      </li>
+    </ul>
+  </div>
+</div>
+</app-stops-filter>
+    </div>
+  </div><div _ngcontent-c7="" class="dropdown">
+    <button _ngcontent-c7="" class="smart-filter-toggle">Duration</button>
+    <div _ngcontent-c7="" class="filter-container" style="display: none;">
+      <!----><app-duration-filter _nghost-c12=""><div _ngcontent-c12="" class="dropdown dropdown-menu">
+  <!---->
+  <!----><div _ngcontent-c12="" class="max-elapsed-content group">
+    <div _ngcontent-c12="" class="elapsed-indicator lowest-elapsed">
+      2h56
+    </div>
+    <div _ngcontent-c12="" class="amadeus-slider-container blue">
+      <nouislider _ngcontent-c12="" _nghost-c13="" class="ng2-nouislider ng-untouched ng-pristine ng-valid"><div _ngcontent-c13="" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-origin" style="left: 100%;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="100.0" aria-valuetext="185" style="z-index: 4;"></div></div></div></div></nouislider>
+      <div _ngcontent-c12="" class="max-elapsed-slider-info">
+        Less than
+        <span _ngcontent-c12="" class="max-amount">
+          3h5
+        </span>
+      </div>
+    </div>
+    <div _ngcontent-c12="" class="elapsed-indicator highest-elapsed">
+      3h5
+    </div>
+  </div>
+</div>
+</app-duration-filter>
+    </div>
+  </div><div _ngcontent-c7="" class="dropdown">
+    <button _ngcontent-c7="" class="smart-filter-toggle">Departure Time</button>
+    <div _ngcontent-c7="" class="filter-container" style="display: none;">
+      <!----><app-departure-time-filter _nghost-c14=""><div _ngcontent-c14="" class="dropdown dropdown-menu">
+  <!---->
+  <!----><div _ngcontent-c14="" class="departure-time-content group">
+    <!----><div _ngcontent-c14="" class="slider-container">
+      <div _ngcontent-c14="" class="histogram" style="height: 70px;">
+        <!----><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="0h - 1h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="0h - 1h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="1h - 2h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="1h - 2h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="2h - 3h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="2h - 3h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="3h - 4h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="3h - 4h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="4h - 5h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="4h - 5h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="5h - 6h" style="height: 8.75px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="5h - 6h" style="height: 8.75px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="6h - 7h" style="height: 26.25px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="6h - 7h" style="height: 26.25px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="7h - 8h" style="height: 70px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="7h - 8h" style="height: 70px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="8h - 9h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="8h - 9h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="9h - 10h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="9h - 10h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="10h - 11h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="10h - 11h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="11h - 12h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="11h - 12h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="12h - 13h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="12h - 13h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="13h - 14h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="13h - 14h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="14h - 15h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="14h - 15h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="15h - 16h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="15h - 16h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="16h - 17h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="16h - 17h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="17h - 18h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="17h - 18h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="18h - 19h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="18h - 19h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="19h - 20h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="19h - 20h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="20h - 21h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="20h - 21h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="21h - 22h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="21h - 22h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="22h - 23h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="22h - 23h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="23h - 24h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="23h - 24h" style="height: 0px;"></div>
+        </div>
+      </div>
+      <nouislider _ngcontent-c14="" _nghost-c13="" class="ng2-nouislider ng-untouched ng-pristine ng-valid"><div _ngcontent-c13="" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-origin" style="left: 0%;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0" style="z-index: 5;"></div></div><div class="noUi-connect" style="left: 0%; right: 0%;"></div><div class="noUi-origin" style="left: 100%;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="100.0" aria-valuetext="24" style="z-index: 4;"></div></div></div></div></nouislider>
+      <div _ngcontent-c14="" class="max-price-slider-info">
+        Outbound between 0 and 24
+      </div>
+    </div>
+  </div>
+</div>
+</app-departure-time-filter>
+    </div>
+  </div>
+
+</div>
+</app-smart-filters>
+          </div>
+          
+
+<!--====== BOOTSTRAP ===== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+
+    <!-- DatatablesJS | Mark -->
+    <script src="assets/javascript/datatables.js"></script>
+    <!-- MomenJS CDN | Mark-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+
     <!--====== UNDERSCORE===== -->
     <!-- underscore JS library CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <!-- Added Jquery UI Libraries wenfang -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- ===== FIREBASE ====== -->
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <!--====== YOUR LOCAL JS FILE ===== -->
     <!-- link to user JS file. Name will change -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
-    <!-- <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script> -->
-
-
-    <script type="text/javascript">
-//     $(".date-picker").datepicker();
-
-//     $(".date-picker").on("change", function () {
-//     var id = $(this).attr("id");
-//     var val = $("label[for='" + id + "']").text();
-//     console.log(val);
-//     console.log(id);
-//     console.log(this.date);
-//     $("#msg").text(val + " changed");
-// });
-
-// MomentJS if wanted to automate departureDate
-    var date = moment().add(1, 'days').format('YYYY-MM-DD');  
-
-    var options = {
-    minDate: new Date(2017, 0, 1, 12),
-    maxDate: new Date(2070, 11, 31),
-    dateFormat: "yy/mm/dd",
-    changeMonth: true,
-    changeYear: true,
-    gotoCurrent:false,
-    // dateFormat: "m/d/yy"
-    // dateFormat: "yyyy/mm/dd",
-    beforeShow: function (inputEl, datepickerInst) {
-        console.log("before show");
-        //datepickerInst.input[0].value =  datepickerInst.selectedMonth + "/" + datepickerInst.selectedDay + "/" + datepickerInst.selectedYear;
-
-        console.log("selected Year/Month/Day", datepickerInst.selectedYear,
-            "/", datepickerInst.selectedMonth,
-            "/", datepickerInst.selectedDay);
-        console.log("current Year/Month/Day", datepickerInst.currentYear,
-            "/", datepickerInst.currentMonth,
-            "/", datepickerInst.currentDay);
-        console.log("draw Year/Month/Day", datepickerInst.drawYear,
-            "/", datepickerInst.drawMonth,
-            "/", datepickerInst.drawDay);
-
-        console.log(datepickerInst);
-        //datepickerInst.input[0].hidden = true;
-
-    },
-    onClose: function(date, inst){
-        console.log(date);
-        console.log(inst);
-        var date = (date);
-        // inst.input[0].value=inst.selectedMonth + "/" + inst.selectedYear;
-    }
-
-};
-
-$(".datepicker").datepicker(options);
-
-
+        <!-- Amadeus API JS -->
+    <script src="assets/javascript/amadeus.js"></script>
+    <script src="assets/javascript/amadeus_inline.js"></script>
+<!--     <script src="assets/javascript/amadeus_poly.js"></script> -->
+    <script src="assets/javascript/amadeus_vendor.js"></script>
+    <script src="assets/javascript/amadeus_platform.js"></script>
     
-    // $("#departureDate").on("click" , function(event)) {
-    // var date = (departureDate);
-    //     console.log(date);
-    // }
-    var date = (date);
     
-    var apiKey = "p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY";
-    // var origin = (ui.item.value);
-    // console.log(ui.item.value);
-    console.log(date);
-    console.log(apiKey);
-
-            $(function() {
-                function log( message ) {
-                    $( "<div>" ).text( message ).prependTo( "#log" );
-                    $( "#log" ).scrollTop( 0 );
-}
-$( ".autocomplete" ).autocomplete({
-source: function( request, response ) {
-$.ajax({
-url: "https://api.sandbox.amadeus.com/v1.2/airports/autocomplete",
-dataType: "json",
-data: {
-apikey: "p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY",
-term: request.term
-},
-success: function( data ) {
-response( data );
-console.log(data);
-console.log(data[0]);
-console.log(data[0].label);
-console.log(data[1]);
-console.log(log);
-console.log(where);
-
-}
-});
-},
-minLength: 3,
-select: function( event, ui ) {
-log( ui.item ?
-"Selected: " + ui.item.label :
-"Nothing selected, input was " + this.value);
-
-console.log(ui.item.label); // this is the Full Airport Name with Identifier and Title
-// $("#where").value(ui.item.label);
-console.log(ui.item); // this is the Airport Object 
-console.log(ui.item.value); // this is the Airport Identifier
-console.log(cityName);
-console.log(date);
-var origin = (ui.item.value);
-console.log(origin);
-
-
-
-$(".submit").on("click" , function(event) {
-$.ajax({
-      url: "https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + origin + "&departure_date=" + date + "&apikey=" + apiKey,
-
-      // Low Fare Search, in progress. TODO: Date, and Departure City -- Mark 
-      // https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=" + origin + "&destination=" + destination + "&departure_date=" + date + "T23:59&apikey=" + apiKey, // 
-
-      // Inspiration search, // 
-      // https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + origin + "&destination=" + cityName + "&departure_date=" + date + "&apikey=" + apiKey, //
-
-      // working on a link which will pick up with Form results and insert at the right part of the API string ;)
-      // url: "https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + FormAnswer + "&apikey=p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY",
-
-      // // low fare query
-// http://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=" + origin + "&destination=" + destination + "&departure_date=" + departureDate + "&return_by=" + returnDate + "T23:59&apikey=" + apiKey, //
-
-      method: "GET"
-
-      }).done(function(data) {
-
-// creating an array with the data from the API
-      Array['#origin'] = data['origin'];
-      console.log(data.origin);
-      console.log(origin);
-      // Array['#outbound'] = data['outbound'];
-      // Array['#flights'] = data['flights'];
-      Array['#currency'] = data['currency'];
-      Array['#results'] = data['results'];
-
-      Array['#departure_date'] = data['departure_date'];
-      Array['#return_date'] = data['return_date'];
-      Array['#price'] = data['price'];
-      Array['#airport'] = data['airport'];
-      Array['#terminal'] = data['terminal'];
-      Array['#destination'] = data['destination'];
-      
-    // array that needs to be sorted
-
-      // $('#table').dataTable(data.Year);
-      // // $('#Rating').dataTable(data.Ratings[0].Value);
-      // $('#data').dataTable(data.Actors);
-      // $('#table').dataTable(data.Title);
-
-      $('#departure_date').append("<br>" + data.results[0].departure_date);
-      $('#departure_date').append("<br>" + data.results[1].departure_date);
-      $('#departure_date').append("<br>" + data.results[2].departure_date);
-      $('#departure_date').append("<br>" + data.results[3].departure_date);
-      $('#departure_date').append("<br>" + data.results[4].departure_date);
-      $('#departure_date').append("<br>" + data.results[5].departure_date);
-      $('#departure_date').append("<br>" + data.results[6].departure_date);
-      $('#departure_date').append("<br>" + data.results[7].departure_date);
-      $('#departure_date').append("<br>" + data.results[8].departure_date);
-      $('#departure_date').append("<br>" + data.results[9].departure_date);
-      $('#departure_date').append("<br>" + data.results[10].departure_date);
-      $('#return_date').append("<br>" + data.results[0].return_date);
-      $('#return_date').append("<br>" + data.results[1].return_date);
-      $('#return_date').append("<br>" + data.results[2].return_date);
-      $('#return_date').append("<br>" + data.results[3].return_date);
-      $('#return_date').append("<br>" + data.results[4].return_date);
-      $('#return_date').append("<br>" + data.results[5].return_date);
-      $('#return_date').append("<br>" + data.results[6].return_date);
-      $('#return_date').append("<br>" + data.results[7].return_date);
-      $('#return_date').append("<br>" + data.results[8].return_date);
-      $('#return_date').append("<br>" + data.results[9].return_date);
-      $('#return_date').append("<br>" + data.results[10].return_date);
-      $('#price').append("<br> $" + data.results[0].price);
-      $('#price').append("<br> $" + data.results[1].price);
-      $('#price').append("<br> $" + data.results[2].price);
-      $('#price').append("<br> $" + data.results[3].price);
-      $('#price').append("<br> $" + data.results[4].price);
-      $('#price').append("<br> $" + data.results[5].price);
-      $('#price').append("<br> $" + data.results[6].price);
-      $('#price').append("<br> $" + data.results[7].price);
-      $('#price').append("<br> $" + data.results[8].price);
-      $('#price').append("<br> $" + data.results[9].price);
-      $('#price').append("<br> $" + data.results[10].price);
-      $('#destination').append("<br>" + data.results[0].destination);
-
-    $('#destination').append("<br>" + data.results[1].destination);
-    $('#destination').append("<br>" + data.results[2].destination);
-    $('#destination').append("<br>" + data.results[3].destination);
-    $('#destination').append("<br>" + data.results[4].destination);
-    $('#destination').append("<br>" + data.results[5].destination);
-    $('#destination').append("<br>" + data.results[6].destination);
-    $('#destination').append("<br>" + data.results[7].destination);
-    $('#destination').append("<br>" + data.results[8].destination);
-    $('#destination').append("<br>" + data.results[9].destination);
-    $('#destination').append("<br>" + data.results[10].destination);
-      $('#origin').text("<br>" + origin);
-      $('#origin').html("<br>" + origin);
-      $('#origin').prepend("<br>" + origin);
-      $('#origin').append("<br>" + origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      }); });
-
-/* code to be executed after the ajax call */
-function callback(data){
-  data.origin = origin;
-  console.log(data.origin);
-  console.log(origin);
-    // var data = (data);
-    // data = data;
-    // var Origin = (data.origin);
-
-};
-
-
-// console.log(this.city);
-},
-open: function() {
-$( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
-},
-close: function() {
-$( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
-}
-});
-});
-</script>
-
-
-
+    
+    
 </body>
 
 </html>
