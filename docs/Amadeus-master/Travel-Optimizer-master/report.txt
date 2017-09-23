@@ -1,0 +1,9 @@
+Travel Optimizer
+
+Jacob Adams
+
+Teaming up with Caleb Yearsley we created a travel optimizer application. I spent the full 36 hours on campus working on this application as well as participating in certain hackathon events. Most of the application was completed during the event and another 8 hours after the event to complete the application. This application utilizes the amadeus api see https://sandbox.amadeus.com/api-catalog. A company provided this api at the Hackathon and instructed us to use it freely afterwards. So the Travel Optimizer is a tool to help you think and plan out travels. Say you have 400$ and you want to go on vacation on a certain day, but you don't know where to. You can input that information into the travel optimizer and it will tell what flights and or trains are leaving during that day in that price range. 
+
+The travel optimizer three main design patterns. The factory pattern that is used to create different ui's for both the train and airplane lists. Then there is the strategy pattern utilized in order to create a library to easily connect and return data from our Postgresql database that stores our train and airport codes. Then we utilize the command pattern that commands when you create a airplane/train ui. 
+
+Since I was paired up in this assignment I will explain my role in this application. For this application I implemented the command pattern, gathered and stored train/airport codes (via perl scripts) into our database, provided most of the json parsing code that got the data from the Amadeus api, some of the Gui features, linked api data with the gui, and the core Transportation, Train, and airport classes.
